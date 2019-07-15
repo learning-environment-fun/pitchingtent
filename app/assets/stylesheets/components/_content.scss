@@ -1,0 +1,17 @@
+
+#content-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+
+  #content-container {
+    width: $content-container-width;
+    margin: 0 auto;
+    background-color: $green;
+    padding: $content-container-vertical-padding $content-container-horizontal-padding;
+
+  }
+}
+
+
