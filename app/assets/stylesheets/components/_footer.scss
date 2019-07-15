@@ -1,1 +1,8 @@
-_footer.scss
+footer {
+  width: 100%;
+  height: $footer-height;
+  background-color: $footer-grey;
+  position: absolute;
+  bottom: 0;
+  flex-grow: 0;
+}
