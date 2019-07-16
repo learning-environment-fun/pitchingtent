@@ -1,19 +1,63 @@
 header {
-  width: 100%;
-  height: $header-height;
-  background-image: url("https://cdn.pixabay.com/photo/2015/03/26/10/29/camping-691424_1280.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: bottom;
-  flex-grow: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: $header-height;
+
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    box-shadow: 0 0 2.25rem rgba(0,0,0,0.8);
+
+}
+
+header:before {
+
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0%;
+    z-index: -2;
+    width: 100%;
+    height: $header-height;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    background-image: $header-background-url;
+    filter: blur(4px);
+
+}
+
+header:after {
+
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0%;
+    z-index: -1;
+    width: 100%;
+    height: $header-height;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: cover;
+    background-image: $header-background-url;
+    z-index: -1;
+    transition: opacity 0.4s ease-in-out;
+
+
+}
+
+header:hover:after {
+  opacity: 0;
 }
 
 header h1 {
-  color: white;
-  filter: drop-shadow(0 0 0.75rem black);
+
+    color: white;
+    filter: drop-shadow(0 0 0.75rem black);
 
 }
 
