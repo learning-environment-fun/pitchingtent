@@ -11,4 +11,7 @@ class Tent < ApplicationRecord
   validates :price, numericality: { only_integer: true }
   validates :wildlife, presence: true
   validates :photo, presence: true
+
+  mount_uploader :photo, PhotoUploader
+
 end
