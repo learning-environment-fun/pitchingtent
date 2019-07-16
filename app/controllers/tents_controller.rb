@@ -16,7 +16,7 @@ class TentsController < ApplicationController
 
   def create
     @tent = Tent.new(tent_params)
-    if @tent.saves
+    if @tent.save
       redirect_to tent_path(@tent)
     else
       render :new
