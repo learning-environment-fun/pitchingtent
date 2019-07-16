@@ -1,5 +1,6 @@
 class TentController < ApplicationController
-  before_action :authenticate_user!, only: [:destroy, :update, :create, :edit]
+  # Verify User; before action and then skip as needed (Index/Show/New)
+  skip_before_action :authenticate_user!, only: [:show, :index, :new]
 
   def index
     @tents = Tent.all
