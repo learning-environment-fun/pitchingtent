@@ -1,14 +1,16 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
   background: white;
   overflow: hidden;
-  position: fixed;
-  top: 0;
+  position: sticky;
+  top: 10px;
   height: $navbar-height;
   z-index: 10;
   width: 100%;
   padding: 10px;
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
