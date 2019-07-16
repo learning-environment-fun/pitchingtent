@@ -16,6 +16,7 @@ class TentsController < ApplicationController
 
   def create
     @tent = Tent.new(tent_params)
+    @tent.user = current_user
     if @tent.save
       redirect_to tent_path(@tent)
     else
@@ -35,8 +36,9 @@ class TentsController < ApplicationController
   end
 
   private
+  
   # Validation to allow name and nothing else into the form
   def tent_params
-    params.require(:tent).permit(:title, :capacity, :description, :location, :price, :wildlife, :photo, :create)
+    params.require(:tent).permit(:title, :capacity, :description, :location, :price, :wildlife, :photo)
   end
 end
