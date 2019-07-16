@@ -13,11 +13,12 @@
 </head>
 
 <body>
-    <%= render '/components/navbar' %>
+
     <div id="page-container">
 
+        <!-- Here will be the specific page content -->
         <%= yield %>
-        <%= render '/components/footer' %>
+
         <p class="notice">
             <%= notice %>
         </p>
