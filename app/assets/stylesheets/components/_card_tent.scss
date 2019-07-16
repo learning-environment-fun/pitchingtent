@@ -2,6 +2,7 @@
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease-in-out;
 }
 
 .card-trip > img {
@@ -36,4 +37,28 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.payment-avatar {
+  display: block;
+  background-color: green;
+  border-radius: 20%;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  padding: 5px;
+  width: 40px;
+
+}
+
+.card-link {
+  text-decoration: none;
+  color: #4f4f4f;
+  &:hover {
+    .card-trip {
+      background-color: green;
+      color: white;
+    }
+
+  }
 }
