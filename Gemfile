@@ -6,8 +6,7 @@ gem 'devise'
 
 # Cloudinary + Carrierwave Gem for team (fcjn)
 gem 'cloudinary', '~> 1.9.1'
-# gem 'carrierwave', '~> 1.2'
-
+gem 'carrierwave', '~> 1.2'
 
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
