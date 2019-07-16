@@ -1,4 +1,4 @@
-class TentController < ApplicationController
+class TentsController < ApplicationController
   # Verify User; before action and then skip as needed (Index/Show/New)
   skip_before_action :authenticate_user!, only: [:show, :index, :new]
 
