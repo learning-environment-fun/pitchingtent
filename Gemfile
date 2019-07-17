@@ -4,6 +4,9 @@ ruby '2.5.3'
 # Adding Gem for team
 gem 'devise'
 
+# for displaying vector graphics
+gem 'inline_svg'
+
 # Cloudinary + Carrierwave Gem for team (fcjn)
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'

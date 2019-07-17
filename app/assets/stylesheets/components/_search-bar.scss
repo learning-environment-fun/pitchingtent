@@ -43,7 +43,7 @@
         // transform: translate3d(0, 0, 0);
     }
 
-    >span {
+    #search-bar-text-field {
         flex-grow: 1;
     }
 
@@ -78,7 +78,7 @@
         }
     }
 
-    .search-bar-icon {
+    #search-bar-icon {
         float: left;
         display: flex;
         flex-direction: column;
@@ -99,7 +99,7 @@
         }
     }
 
-    .search-bar-buttons {
+    #search-bar-buttons {
         display: flex;
         justify-content: flex-end;
 
@@ -109,6 +109,15 @@
 
         @media screen and (max-width: $smartphone-width) {
             display: none;
+        }
+    }
+
+    #search-bar-dropdown-arrow {
+
+        display: none;
+
+        @media screen and (max-width: $smartphone-width) {
+            display: inline-block;
         }
     }
 }
@@ -135,7 +144,7 @@
         }
     }
 
-    .search-bar-icon {
+    #search-bar-icon {
 
         &.is-hovered {
             color: $searchbar-light-focus-color;
