@@ -1,2 +1,50 @@
-<h1>Tent#show</h1>
-<p>Find me in app/views/tent/show.html.erb</p>
+<section class="tent-details">
+	<div class="container">
+		<div>
+			<h1><%= @tent.title %></h1>
+			<p><%= @tent.description %></p>
+		</div>
+
+		<div>
+			<%= cl_image_tag @tent.photo, height: 300, width: 400, crop: :fill %>		
+			<div>
+				<h3>€ <%= @tent.price %> per night</h3>
+			</div>
+		</div>
+	</div>
+</section>
+<section class="extra-information">
+	<div class="container">
+		<div class="show_top_container">
+			<div>
+				<h3>Wildlife:</h3>
+				<p><% animal_array = @tent.wildlife.split(",") %>
+					<% animal_array.each do |animal| %>
+				  <ul>
+				  	<li><%= animal %></li>
+				  </ul>
+				<% end %></p>
+			</div>
+			<div>
+				<h5>Start Date: DDDD</h5>
+				<h5>End Date: DDDD</h5>
+				<h5>Capacity: <%= @tent.capacity %></h5>
+				<a href="">Book Now</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+	<div class="show_top_container">
+		<h3>- Reviews -</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum deleniti sapiente ducimus veniam. Libero ex debitis quos, asperiores consequuntur sed.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum deleniti sapiente ducimus veniam. Libero ex debitis quos, asperiores consequuntur sed.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum deleniti sapiente ducimus veniam. Libero ex debitis quos, asperiores consequuntur sed.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum deleniti sapiente ducimus veniam. Libero ex debitis quos, asperiores consequuntur sed.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum deleniti sapiente ducimus veniam. Libero ex debitis quos, asperiores consequuntur sed.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum deleniti sapiente ducimus veniam. Libero ex debitis quos, asperiores consequuntur sed.</p>
+
+	</div>

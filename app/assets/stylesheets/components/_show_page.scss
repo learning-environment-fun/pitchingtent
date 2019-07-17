@@ -1,0 +1,19 @@
+.show_top_container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border: 2px, solid, red;
+	color: white;
+}
+
+.page{
+	background: #ADC797;
+}
+
+section.tent-details {
+	background-color: lightblue;
+}
+
+section.extra-information {
+	background-color: pink;
+}
