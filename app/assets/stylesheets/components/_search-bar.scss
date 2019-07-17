@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
+    height: $navbar-height;
     width: 100%;
     background-color: $searchbar-dark-background-color;
 
@@ -99,6 +99,10 @@
 
         .btn {
             margin-right: 0.4rem;
+        }
+
+        @media screen and (max-width: $smartphone-width) {
+            display: none;
         }
     }
 }

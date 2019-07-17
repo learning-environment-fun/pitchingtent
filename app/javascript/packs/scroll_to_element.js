@@ -1,6 +1,13 @@
 // https://stackoverflow.com/questions/18071046/smooth-scroll-to-specific-div-on-click/18071231
 
 var smoothScroll = function (elementId) {
+
+  // sometimes we get stuck in infinite scroll
+  let shouldKillProcess = false;
+  const maxTimeBeforeKill = 1000; // milliseconds
+
+  setTimeout(() => shouldKillProcess = true, maxTimeBeforeKill);
+
   var MIN_PIXELS_PER_STEP = 16;
   var MAX_SCROLL_STEPS = 30;
   var target = document.getElementById(elementId);
@@ -23,6 +30,10 @@ var smoothScroll = function (elementId) {
   var isUp = targetY < scrollContainer.scrollTop;
 
   var stepFunc = function () {
+    if (shouldKillProcess) {
+      return;
+    }
+
     if (isUp) {
       scrollContainer.scrollTop = Math.max(targetY, scrollContainer.scrollTop - pixelsPerStep);
       if (scrollContainer.scrollTop <= targetY) {

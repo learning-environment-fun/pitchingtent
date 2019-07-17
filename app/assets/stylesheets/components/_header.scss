@@ -8,7 +8,9 @@ header {
     align-items: center;
     position: relative;
 
-
+    #header-down {
+        padding-bottom: $navbar-height + 6px;
+    }
 
 }
 
