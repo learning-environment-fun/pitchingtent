@@ -1,0 +1,31 @@
+.btn-custom-outline {
+
+    border: 2px solid lighten($gray, 30%);
+    color: lighten($gray, 30%);
+
+    background: none;
+
+    transition: color 0.3s ease;
+    transition: border-color 0.3s ease;
+
+    &.gray {
+        border: 2px solid lighten($gray, 30%);
+        color: lighten($gray, 30%);
+
+        &:hover {
+            border-color: lighten($gray, 50%);
+            color: lighten($gray, 50%);
+        }
+    }
+
+    &.blue {
+        border-color: $blue;
+        color: $blue;
+
+        &:hover {
+            border-color: lighten($blue, 30%);
+            color: lighten($blue, 30%);
+        }
+    }
+
+}

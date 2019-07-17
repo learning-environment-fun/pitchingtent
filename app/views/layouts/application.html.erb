@@ -9,6 +9,7 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%#= stylesheet_pack_tag 'application', media: 'all' %>
+    <script src="https://kit.fontawesome.com/36197ad289.js"></script>
     <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 
@@ -16,15 +17,21 @@
 
     <div id="page-container">
 
+        
+
         <!-- Here will be the specific page content -->
         <%= yield %>
 
-        <p class="notice">
+        <p class="notice mb-0">
             <%= notice %>
         </p>
         <p class="alert">
             <%= alert %>
         </p>
+        
+
+        <%= render '/components/footer' %>
+
         <%= javascript_include_tag 'application' %>
         <%= javascript_pack_tag 'application' %>
     </div>

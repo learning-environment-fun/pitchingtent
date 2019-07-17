@@ -2,6 +2,7 @@
 log/*.log
 tmp/**/*
 tmp/*
+public/uploads/tmp/*
 !log/.keep
 !tmp/.keep
 *.swp
