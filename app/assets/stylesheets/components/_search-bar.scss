@@ -27,7 +27,7 @@
         border: none;
 
         input {
-            background-color: none;
+            background-color: rgba(0, 0, 0, 0);
             border: none;
             width: 100%;
             height: 100%;
@@ -38,7 +38,7 @@
 
             filter: none;
 
-            &:focus {
+            &:hover {
                 color: $searchbar-dark-focus-color;
                 border: none;
                 // font-weight: bold;
@@ -62,7 +62,7 @@
 
         filter: none;
 
-        &.is-focused {
+        &.is-hovered {
             color: $searchbar-dark-focus-color;
             filter: drop-shadow(0 0 0.4rem $searchbar-dark-shadow-color);
         }
@@ -79,7 +79,7 @@
         input {
             color: $searchbar-light-color;
 
-            &:focus {
+            &:hover {
                 color: $searchbar-light-focus-color;
                 filter: drop-shadow(0 0 0.4rem $searchbar-light-shadow-color);
             }
@@ -88,7 +88,7 @@
 
     .search-bar-icon {
 
-        &.is-focused {
+        &.is-hovered {
             color: $searchbar-light-focus-color;
             filter: drop-shadow(0 0 0.4rem $searchbar-light-shadow-color);
         }

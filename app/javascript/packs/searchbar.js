@@ -5,12 +5,12 @@ const searchBarFadeInit = () => {
     const searchBarInput = searchBar.querySelector('input');
     const searchBarIcon = searchBar.querySelector('.search-bar-icon');
 
-    searchBarInput.addEventListener('focus', (_event) => {
-      searchBarIcon.classList.toggle('is-focused');
+    searchBarInput.addEventListener('mouseenter', (_event) => {
+      searchBarIcon.classList.toggle('is-hovered');
     });
 
-    searchBarInput.addEventListener('blur', (_event) => {
-      searchBarIcon.classList.toggle('is-focused');
+    searchBarInput.addEventListener('mouseleave', (_event) => {
+      searchBarIcon.classList.toggle('is-hovered');
     });
   }
 }
