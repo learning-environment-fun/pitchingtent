@@ -1,58 +1,59 @@
 <%= render 'components/default_header' %>
-
 <div id="content-wrapper">
-    <div id="content-container">
-        <div class="cards py-4">
-            <div>
-                <h3>Rent a Tent!</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
-            </div>
-            <div class="icon-list">
-                <ul>
-                    <li><i class="fas fa-leaf"></i>Pure Wildness</li>
-                    <li><i class="fas fa-temperature-low"></i>Every Weather</li>
-                    <li><i class="fab fa-tencent-weibo"></i>Sustainable</li>
-                    <li><i class="fab fa-gripfire"></i>Wild fires</li>
-                </ul>
-            </div>
-            <div class="action-list">
-                <ul>
-                    <li>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aliquid tempore ut. Eum aspernatur, mollitia suscipit?</p>
-                    </li>
-                    <li>
-                        <%= link_to 'Add your own tent', new_tent_path, class:"btn btn-primary"%>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <hr>
-        <div class="cards">
-            <% @tents.each do |tent| %>
-            <%= link_to tent_path(tent), class:"card-link" do %>
-            <div class="card-trip">
-                <img src=<%=tent.photo %>>
-                <div class="card-trip-infos">
-                    <div>
-                        <h2>
-                            <%= tent.title %>
-                        </h2>
-                        <p>
-                            <%= tent.description %>
-                        </p>
-                    </div>
-                    <h2 class="card-trip-pricing">
-                        <%= tent.price %> €</h2>
-                    <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered" /> -->
-                    <i class="fab fa-apple-pay card-trip-user d-block payment-avatar"></i>
+    <div class="content-shadow">
+        <div id="content-container">
+            <div class="cards py-4">
+                <div>
+                    <h3>Rent a Tent!</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
+                </div>
+                <div class="icon-list">
+                    <ul>
+                        <li><i class="fas fa-leaf"></i>Pure Wildness</li>
+                        <li><i class="fas fa-temperature-low"></i>Every Weather</li>
+                        <li><i class="fab fa-tencent-weibo"></i>Sustainable</li>
+                        <li><i class="fab fa-gripfire"></i>Wild fires</li>
+                    </ul>
+                </div>
+                <div class="action-list">
+                    <ul>
+                        <li>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aliquid tempore ut. Eum aspernatur, mollitia suscipit?</p>
+                        </li>
+                        <li>
+                            <%= link_to 'Add your own tent', new_tent_path, class:"btn btn-primary"%>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <% end %>
-            <% end %>
+            <hr>
+
+            <div class="cards-content">
+                <div class="cards">
+                    <% @tents.each do |tent| %>
+                    <%= link_to tent_path(tent), class:"card-link" do %>
+                    <div class="card-trip">
+                        <img src=<%=tent.photo %>>
+                        <div class="card-trip-infos">
+                            <div>
+                                <h2>
+                                    <%= tent.title %>
+                                </h2>
+                                <p>
+                                    <%= tent.description %>
+                                </p>
+                            </div>
+                            <h2 class="card-trip-pricing">
+                                <%= tent.price %> €</h2>
+                            <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered" /> -->
+                            <i class="fab fa-apple-pay card-trip-user d-block payment-avatar"></i>
+                        </div>
+                    </div>
+                    <% end %>
+                    <% end %>
+                </div>
+            </div>
         </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
     </div>
 </div>
+<%= render 'components/footer' %>
