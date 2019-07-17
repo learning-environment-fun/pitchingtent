@@ -1,0 +1,39 @@
+.header_tent {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	border: 2px, solid, red;
+	color: white;
+	margin: 8px;
+	background-color: rgba(58, 99, 81, .7);
+	padding-top: 10px
+	
+}
+
+.header_text {
+	color: #C9E4CA;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+
+}
+
+.page{
+	background: #ADC797;
+}
+
+section.booking_tent {
+	background-color: #87BBA2;
+}
+
+section.reviews_tent {
+	background-color: #C9E4CA;
+}
+
+
+
+// @font-face {
+//   font-family: "Kaushan Script Regular";
+//   src: url(/assets/KaushanScript-Regular.otf) format("truetype");
+// }
