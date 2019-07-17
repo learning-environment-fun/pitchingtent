@@ -17,15 +17,19 @@
     background-color: $searchbar-dark-background-color;
 
     overflow: hidden;
-    border: 1px $searchbar-dark-border-color;
+    border: 1px solid $searchbar-dark-border-color;
 
     color: $searchbar-dark-color;
 
-    position: absolute;
-    bottom: 0;
+
     padding: 0 30px;
 
     box-shadow: 0 0 2.25rem rgba(0, 0, 0, 0.8);
+
+    &.is-in-header {
+        position: absolute;
+        bottom: 0;
+    }
 
     &.is-detached {
         position: fixed;

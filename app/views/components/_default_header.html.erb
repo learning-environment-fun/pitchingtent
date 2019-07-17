@@ -3,18 +3,5 @@
         <h1>Live your Life. Enjoy the nature.</h1>
         <i id='header-down' class="fas fa-chevron-down"></i>
     </div>
-    <div class="search-bar">
-        <span>
-            <span class="search-bar-icon"><i class="fas fa-search"></i></span>
-            <form action="" class="search-form">
-                <input type="text" value="Search for Tents">
-            </form>
-        </span>
-        <!-- Other option: btn-custom-outline blue -->
-        <span class="search-bar-buttons">
-            <%= link_to 'Login', new_user_session_path, class:"btn btn-primary"%>
-            <a href="" class="btn btn-custom-outline gray">List Home</a>
-            <a href="" class="btn btn-custom-outline gray">List Home</a>
-        </span>
-    </div>
+    <%= render partial:'components/search_bar', locals: { is_in_header: true } %>
 </header>

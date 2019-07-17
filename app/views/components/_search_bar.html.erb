@@ -1,0 +1,16 @@
+<% is_in_header ||= false %>
+<% class_string = is_in_header ? ' is-in-header' : ' is-light' %>
+<div class="search-bar<%= class_string %>">
+    <span>
+        <span class="search-bar-icon"><i class="fas fa-search"></i></span>
+        <form action="" class="search-form">
+            <input type="text" value="Search for Tents">
+        </form>
+    </span>
+    <!-- Other option: btn-custom-outline blue -->
+    <span class="search-bar-buttons">
+        <%= link_to 'Login', new_user_session_path, class:"btn btn-primary"%>
+        <a href="" class="btn btn-custom-outline gray">List Home</a>
+        <a href="" class="btn btn-custom-outline gray">List Home</a>
+    </span>
+</div>
