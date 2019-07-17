@@ -6,7 +6,6 @@
   margin: 0;
   padding-bottom: $footer-height;
 
-
   #content-container {
     width: $content-container-width;
     margin: 0 auto;
@@ -17,6 +16,7 @@
   }
 
   .content-shadow {
-    box-shadow: 0 0 2.25rem rgba(0,0,0,0.4);
+    box-shadow: 0 0 2.25rem rgba(0, 0, 0, 0.4);
+    z-index: $footer-high-z-index + 1;
   }
 }

@@ -1,5 +1,7 @@
 .search-bar {
 
+    z-index: $footer-high-z-index + 3;
+
     -webkit-transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
     -o-transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
     -moz-transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
