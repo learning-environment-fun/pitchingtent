@@ -1,7 +1,8 @@
 <%= render 'components/default_header' %>
-<%= render '/components/navbar' %>
+
 <div id="content-wrapper">
     <div id="content-container">
+<<<<<<< HEAD
 
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Ut faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Etiam dignissim diam quis enim lobortis scelerisque fermentum dui. Nibh sit amet commodo nulla facilisi nullam vehicula ipsum a. In pellentesque massa placerat duis ultricies lacus sed. In est ante in nibh mauris cursus mattis. Dolor sed viverra ipsum nunc aliquet. At tellus at urna condimentum mattis pellentesque. Morbi tristique senectus et netus et. Tempus imperdiet nulla malesuada pellentesque elit. Etiam non quam lacus suspendisse faucibus interdum posuere. Cras adipiscing enim eu turpis egestas pretium aenean. Sit amet aliquam id diam maecenas ultricies. Purus sit amet luctus venenatis lectus magna fringilla urna porttitor. Neque egestas congue quisque egestas. Mauris sit amet massa vitae tortor condimentum lacinia. Sed elementum tempus egestas sed sed risus pretium quam. Mauris nunc congue nisi vitae.
 
@@ -21,13 +22,59 @@ Vulputate dignissim suspendisse in est ante in. Tincidunt nunc pulvinar sapien e
                 <div>
                     <h2><%= tent.title %></h2>
                     <p><%= tent.description %></p>
-                </div>
-                <h2 class="card-trip-pricing"><%= tent.price %></h2>
-                <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered" />
+=======
+        <div class="cards py-4">
+            <div>
+                <h3>Rent a Tent!</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
+            </div>
+            <div class="icon-list">
+                <ul>
+                    <li><i class="fas fa-leaf"></i>Pure Wildness</li>
+                    <li><i class="fas fa-temperature-low"></i>Every Weather</li>
+                    <li><i class="fab fa-tencent-weibo"></i>Sustainable</li>
+                    <li><i class="fab fa-gripfire"></i>Wild fires</li>
+                </ul>
+            </div>
+            <div class="action-list">
+                <ul>
+                    <li>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos aliquid tempore ut. Eum aspernatur, mollitia suscipit?</p>
+                    </li>
+                    <li>
+                        <%= link_to 'Add your own tent', new_tent_path, class:"btn btn-primary"%>
+                    </li>
+                </ul>
             </div>
         </div>
-        <% end %>
-      </div>
-
+        <hr>
+        <div class="cards">
+            <% @tents.each do |tent| %>
+            <%= link_to tent_path(tent), class:"card-link" do %>
+            <div class="card-trip">
+                <img src=<%=tent.photo %>>
+                <div class="card-trip-infos">
+                    <div>
+                        <h2>
+                            <%= tent.title %>
+                        </h2>
+                        <p>
+                            <%= tent.description %>
+                        </p>
+                    </div>
+                    <h2 class="card-trip-pricing">
+                        <%= tent.price %> €</h2>
+                    <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered" /> -->
+                    <i class="fab fa-apple-pay card-trip-user d-block payment-avatar"></i>
+>>>>>>> 854497330a8376a23c0d6ba58d4f3745fb9520af
+                </div>
+            </div>
+            <% end %>
+            <% end %>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto temporibus ipsum qui ut praesentium, aliquam et mollitia sapiente, amet explicabo natus dolor, corporis itaque voluptas in velit neque, excepturi harum!</p>
     </div>
 </div>

@@ -20,6 +20,7 @@ class TentsController < ApplicationController
     if @tent.save
       redirect_to tent_path(@tent)
     else
+      puts @tent
       render :new
     end
   end

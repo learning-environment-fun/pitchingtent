@@ -1,6 +1,16 @@
 <header class="header">
-
-  <img src="#" alt="">
-  <h1>This is the welcome Header</h1>
-
+    <div class="header-box text-center">
+        <h1>Live your Life. Enjoy the nature.</h1>
+        <a href="#"><i class="fas fa-chevron-down"></i></a>
+    </div>
+    <div class="search-bar">
+        <span>
+            <span class="search-bar-icon"><i class="fas fa-search"></i></span>
+            <form action="" class="search-form">
+                <input type="text" value="Search for Tents">
+            </form>
+        </span>
+        <!-- Other option: btn-custom-outline blue -->
+        <%= link_to 'Login', new_tent_path, class:"btn btn-primary"%>
+    </div>
 </header>

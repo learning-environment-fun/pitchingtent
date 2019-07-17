@@ -1,0 +1,14 @@
+.header-newTent {
+  width: 100%;
+  height: $header-height;
+  background-image: url("https://images.pexels.com/photos/45241/tent-camp-night-star-45241.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-repeat: no-repeat;
+  //background-attachment: fixed;
+  background-position: bottom;
+  background-size: cover;
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

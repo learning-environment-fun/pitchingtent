@@ -1,11 +1,11 @@
-<%= render 'components/default_header' %>
+<%= render 'components/headerNewTent' %>
 <div id="content-wrapper">
     <div id="content-container">
         <div class="custom-form-wrapper">
             <h1>Create a new Tent Place</h1>
 
 
-            <%= simple_form_for @tent  do |f| %>
+            <%= simple_form_for @tent do |f| %>
             <%= f.input :title %>
             <%= f.input :capacity %>
             <%= f.input :description %>
