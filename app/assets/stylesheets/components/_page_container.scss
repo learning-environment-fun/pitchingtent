@@ -5,7 +5,9 @@
     //top: $navbar-height; displays a small space on the top for the navbar
     display: flex;
     flex-direction: column;
+    overflow: auto;
     overflow-x: hidden;
+    flex-wrap: nowrap;
 }
 
 body {
