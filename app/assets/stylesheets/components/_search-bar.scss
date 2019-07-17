@@ -4,12 +4,12 @@
     justify-content: space-between;
     height: 50px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: $searchbar-dark-background-color;
 
     overflow: hidden;
-    border: 1px darken($gray, 50%);
+    border: 1px $searchbar-dark-border-color;
 
-    color: darken($light-gray, 20%);
+    color: $searchbar-dark-color;
 
     position: absolute;
     bottom: 0;
@@ -23,15 +23,15 @@
         display: inline-block;
         height: 50px;
         width: 80%;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: none;
         border: none;
 
         input {
-            background-color: rgba(0, 0, 0, 0);
+            background-color: none;
             border: none;
             width: 100%;
             height: 100%;
-            color: darken($light-gray, 20%);
+            color: $searchbar-dark-color;
 
             transition: filter 0.3s ease-in-out;
             transition: -webkit-filter 0.3s ease-in-out;
@@ -39,10 +39,10 @@
             filter: none;
 
             &:focus {
-                color: $light-gray;
+                color: $searchbar-dark-focus-color;
                 border: none;
                 // font-weight: bold;
-                filter: drop-shadow(0 0 0.4rem white);
+                filter: drop-shadow(0 0 0.4rem $searchbar-dark-shadow-color);
                 outline: none;
             }
         }
@@ -55,7 +55,7 @@
         justify-content: center;
         height: 50px;
         padding: 0 1rem;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: none;
 
         transition: filter 0.3s ease-in-out;
         transition: -webkit-filter 0.3s ease-in-out;
@@ -63,10 +63,34 @@
         filter: none;
 
         &.is-focused {
-            color: $light-gray;
-            filter: drop-shadow(0 0 0.4rem white);
+            color: $searchbar-dark-focus-color;
+            filter: drop-shadow(0 0 0.4rem $searchbar-dark-shadow-color);
+        }
+    }
+}
+
+.search-bar.is-light {
+
+    background-color: $searchbar-light-background-color;
+    color: $searchbar-light-color;
+
+    form {
+
+        input {
+            color: $searchbar-light-color;
+
+            &:focus {
+                color: $searchbar-light-focus-color;
+                filter: drop-shadow(0 0 0.4rem $searchbar-light-shadow-color);
+            }
         }
     }
 
+    .search-bar-icon {
 
+        &.is-focused {
+            color: $searchbar-light-focus-color;
+            filter: drop-shadow(0 0 0.4rem $searchbar-light-shadow-color);
+        }
+    }
 }
