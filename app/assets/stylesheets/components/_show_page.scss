@@ -1,23 +1,27 @@
 .header_tent {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
 	border: 2px, solid, red;
 	color: white;
 	margin: 8px;
-	background-color: rgba(58, 99, 81, .7);
-	padding-top: 10px
-	
+	// background-color: rgba(58, 99, 81, .7);
+	padding-top: 10px;
+  height: 400px;
 }
 
-.header_text {
-	color: #C9E4CA;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.header_tent_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+    color: #C9E4CA;
+}
 
+.img_container {
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
 
 }
+
 
 .page{
 	background: #ADC797;
