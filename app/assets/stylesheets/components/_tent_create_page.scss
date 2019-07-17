@@ -1,0 +1,47 @@
+.content-create-tent {
+    background-image: url('https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80');
+    //https://images.unsplash.com/photo-1545153996-9419dd2acf66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80
+    //https://images.unsplash.com/photo-1523642595781-e7ce9855e4f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80
+    /* Full height */
+    height: 100vh;
+    width: 100vw;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.tent-wrapper {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    left: 0;
+    width: 600px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+
+.tent-form {
+    position: relative;
+    padding: 100px;
+    color: white;
+
+}
+
+.btn {
+
+    border-radius: 10%;
+    color: black;
+    padding: 10px;
+    background-color: white;
+    position: absolute;
+    right: -150px;
+    bottom: 200px;
+}
+
+.btn:hover {
+    color: white;
+    background-color: black;
+}
