@@ -16,3 +16,15 @@ $footer-grey: #e6e6e6;
 // accordingly, possesses two distinct (inverted) color sets
 // these are defined here, and made more conveniently accessible
 // by a helper function defined in '_functions'
+
+$searchbar-dark-background-color: rgba(0, 0, 0, 0.6);
+$searchbar-dark-border-color: 1px darken($gray, 50%);
+$searchbar-dark-color: darken($light-gray, 20%);
+$searchbar-dark-focus-color: $light-gray;
+$searchbar-dark-shadow-color: white;
+
+$searchbar-light-background-color: rgb(245, 245, 245);
+$searchbar-light-border-color: 1px darken($gray, 50%);
+$searchbar-light-color: $gray;
+$searchbar-light-focus-color: darken($gray, 20%);
+$searchbar-light-shadow-color: black;
