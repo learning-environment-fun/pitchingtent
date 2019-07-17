@@ -41,7 +41,7 @@
 
 .payment-avatar {
   display: block;
-  background-color: green;
+  background-color: $blue;
   border-radius: 20%;
   color: white;
   text-align: center;
@@ -53,10 +53,10 @@
 
 .card-link {
   text-decoration: none;
-  color: #4f4f4f;
+  color: $blue;
   &:hover {
     .card-trip {
-      background-color: green;
+      background-color: $blue;
       color: white;
     }
 
