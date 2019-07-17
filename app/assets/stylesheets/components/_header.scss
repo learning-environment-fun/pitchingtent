@@ -22,7 +22,7 @@ header:before {
     z-index: -2;
     width: 100%;
     height: $header-height;
-    background-attachment: fixed;
+    //background-attachment: fixed;
     background-position: bottom;
     background-size: cover;
     background-image: $header-background-url;
@@ -40,7 +40,7 @@ header:after {
     z-index: -1;
     width: 100%;
     height: $header-height;
-    background-attachment: fixed;
+    //background-attachment: fixed;
     background-position: bottom;
     background-size: cover;
     background-image: $header-background-url;
