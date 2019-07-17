@@ -1,6 +1,6 @@
 import "bootstrap";
 import {
-  searchBarFadeInit
+  searchBarInit
 } from "./searchbar.js";
 
-searchBarFadeInit();
+searchBarInit();
