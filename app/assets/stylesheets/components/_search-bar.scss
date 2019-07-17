@@ -1,4 +1,10 @@
 .search-bar {
+
+    transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    transition: color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    transition: border-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    transition: filter $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -33,17 +39,19 @@
             height: 100%;
             color: $searchbar-dark-color;
 
-            transition: filter 0.3s ease-in-out;
-            transition: -webkit-filter 0.3s ease-in-out;
+            transition: filter $searchbar-color-transition-time ease-in-out;
+            transition: -webkit-filter $searchbar-color-transition-time ease-in-out;
+            transition: color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
 
             filter: none;
+            outline: none;
 
             &:hover {
                 color: $searchbar-dark-focus-color;
                 border: none;
                 // font-weight: bold;
                 filter: drop-shadow(0 0 0.4rem $searchbar-dark-shadow-color);
-                outline: none;
+
             }
         }
     }
@@ -57,8 +65,9 @@
         padding: 0 1rem;
         background-color: none;
 
-        transition: filter 0.3s ease-in-out;
-        transition: -webkit-filter 0.3s ease-in-out;
+        transition: filter $searchbar-color-transition-time ease-in-out;
+        transition: -webkit-filter $searchbar-color-transition-time ease-in-out;
+        transition: color $searchbar-color-transition-time ease-in-out;
 
         filter: none;
 
