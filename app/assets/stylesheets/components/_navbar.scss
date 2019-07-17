@@ -3,8 +3,9 @@
   justify-content: flex-end;
   background: white;
   overflow: hidden;
+  position: -webkit-sticky;
   position: sticky;
-  top: 10px;
+  top: 0;
   height: $navbar-height;
   z-index: 10;
   width: 100%;
