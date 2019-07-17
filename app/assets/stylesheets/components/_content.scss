@@ -6,10 +6,17 @@
   margin: 0;
   padding-bottom: $footer-height;
 
+
   #content-container {
     width: $content-container-width;
     margin: 0 auto;
     padding: $content-container-vertical-padding $content-container-horizontal-padding;
     flex-grow: 1;
+    padding-bottom: 50px;
+
+  }
+
+  .content-shadow {
+    box-shadow: 0 0 2.25rem rgba(0,0,0,0.4);
   }
 }
