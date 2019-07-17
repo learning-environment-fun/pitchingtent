@@ -1,22 +1,56 @@
 .header_tent {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
 	border: 2px, solid, red;
 	color: white;
-	margin: 8px;
-	background-color: rgba(58, 99, 81, .7);
-	padding-top: 10px
-	
+	// margin: 8px;
+  margin-bottom: 8px;
+	// background-color: rgba(58, 99, 81, .7);
+	padding-top: 10px;
+  height: 400px;
 }
 
-.header_text {
-	color: #C9E4CA;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.header_tent_content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 40px;
+  padding-top: 20px;
+}
 
+.img_container {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100% wh;
+}
 
+.wildlife-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  background-color: rgba(200, 200, 200, 0.7);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px 20px 0px 20px
+
+}
+
+.card-product {
+  // overflow: hidden;
+  height: 300px;
+  width: 240px;
+  background-color: rgba(200, 200, 200, 0.7);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-right: 40px;
+  margin-top: 20px;
+}
+
+.form-book {
+  padding: 15px 15px 15px 15px;
+}
+
+.border-underline {
+  border-bottom: 3px solid #ebebe0;
 }
 
 .page{
@@ -24,11 +58,13 @@
 }
 
 section.booking_tent {
-	background-color: #87BBA2;
+	// background-color: #87BBA2;
+  width: 100% vw;
 }
 
 section.reviews_tent {
-	background-color: #C9E4CA;
+	background-color: #c3c3a2;
+  padding: 10px 10px 10px 10px;
 }
 
 

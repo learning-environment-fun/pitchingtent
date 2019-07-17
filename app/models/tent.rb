@@ -15,6 +15,6 @@ class Tent < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def self.wildlife_options
-    ["Bear", "Moose", "Turkey", "Fish", "Cactus", "Rat", "Freddy"]
+    ["Bear", "Moose", "Felix", "Charles", "Alex", "Freddy"]
   end
 end

@@ -1,21 +1,22 @@
-<%= render 'components/headerNewTent' %>
-<div id="content-wrapper">
-    <div id="content-container">
-        <div class="custom-form-wrapper">
-            <h1>Create a new Tent Place</h1>
-
-
-            <%= simple_form_for @tent do |f| %>
-            <%= f.input :title %>
-            <%= f.input :capacity %>
-            <%= f.input :description %>
-            <%= f.input :location %>
-            <%= f.input :price %>
-            <%= f.input :wildlife, collection: Tent.wildlife_options, input_html: { multiple: true } %>
-            <%= f.input :photo %>
-            <%= f.input :photo_cache, as: :hidden %>
-            <%= f.button :submit %>
-            <% end %>
+<div id="content-wrapper" class="content-create-tent">
+<!--    <div class="content-create-tent">-->
+        <div class="tent-wrapper">
+            <div class="tent-form">
+                <h1>Rent your Tent!</h1>
+                <%= simple_form_for @tent do |f| %>
+                <%= f.input :title %>
+                <%= f.input :capacity %>
+                <%= f.input :description %>
+                <%= f.input :location %>
+                <%= f.input :price %>
+                <%= f.input :wildlife, collection: Tent.wildlife_options, input_html: { multiple: true } %>
+                <%= f.input :photo %>
+                <%= f.input :photo_cache, as: :hidden %>
+                <%= f.button :submit %>
+                <% end %>
+            </div>
         </div>
-    </div>
+<!--    </div>-->
 </div>
+
+<%= render partial:'/components/footer', locals: { is_above: true } %>
