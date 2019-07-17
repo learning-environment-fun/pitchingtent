@@ -15,7 +15,9 @@ class TentsController < ApplicationController
   end
 
   def create
+    wildlife = params.require(:tent)["wildlife"][1..-1].join(", ")
     @tent = Tent.new(tent_params)
+    @tent.wildlife = wildlife
     @tent.user = current_user
     if @tent.save
       redirect_to tent_path(@tent)
