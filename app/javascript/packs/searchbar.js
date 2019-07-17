@@ -3,6 +3,7 @@ let searchBarIcon;
 let searchBarInput;
 let searchBarOriginalParent;
 const isLightTimeoutTime = 5; // millisecs
+const defaultSearchText = 'Scope out a tent';
 
 const searchBarInit = () => {
   searchBar = document.querySelector('.search-bar');
@@ -14,6 +15,7 @@ const searchBarInit = () => {
 
     searchBarFadeInit();
     searchBarScrollTrackingInit();
+    searchBarFocusDetectInit();
   }
 }
 
@@ -65,6 +67,27 @@ const searchBarScrollTrackingInit = () => {
       }
     }
     // }
+  });
+}
+
+const searchBarFocusDetectInit = () => {
+  searchBarInput.setAttribute('value', defaultSearchText);
+  searchBarInput.setAttribute('default', defaultSearchText);
+
+  searchBarInput.addEventListener('focus', (_event) => {
+    if (searchBarInput.getAttribute('value') === defaultSearchText) {
+      searchBarInput.setAttribute('value', '');
+    }
+  });
+
+  searchBarInput.addEventListener('blur', (_event) => {
+    if (searchBarInput.getAttribute('value') === '' || searchBarInput.getAttribute('value') === ' ' || searchBarInput.getAttribute('value') === null) {
+      // console.log('yoyo');
+      // in inspector, value will always be update to defaultText
+      // but that updated value isn't always reflected on renderd page
+      // bug? 
+      searchBarInput.setAttribute('value', defaultSearchText);
+    }
   });
 }
 
