@@ -1,11 +1,11 @@
 .card-trip {
   overflow: hidden;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease-in-out;
 }
 
-.card-trip > img {
+.card-trip>img {
   height: 200px;
   width: 100%;
   object-fit: cover;
@@ -49,15 +49,30 @@
   padding: 5px;
   width: 40px;
 
+  transition: all 0.3s ease-in-out;
+
 }
 
 .card-link {
   text-decoration: none;
   color: $blue;
+
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+  transition: box-shadow 0.3s ease-in-out;
+
   &:hover {
     .card-trip {
       background-color: $blue;
       color: white;
+    }
+
+    box-shadow: 0 0 30px rgba(darken($blue, 20%), 0.4);
+
+    .payment-avatar {
+      background-color: white;
+      color: $blue;
+      width: 50px;
     }
 
   }
