@@ -4,13 +4,13 @@
     <div class="content-shadow">
         <div id="content-container">
 <!--             <img src="" alt="" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);"> -->
-            <%= cl_image_tag(@tent.photo) %>
+            <%#= cl_image_tag(@tent.photo) %>
             <div class="background-container">
                 <div>
                     <div class="grid-container">
                         <div class="photo-show">
                             <!-- <div> -->
-                                <%= cl_image_tag(@tent.photo, width: 380, crop: :fit) %>
+                                <%= cl_image_tag(@tent.photo, width: 380, height:250, crop: :fit) %>
                             <!-- </div> -->
                             <!-- <div>
                                 <div>
