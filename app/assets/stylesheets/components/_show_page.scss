@@ -1,75 +1,180 @@
-.header_tent {
-	border: 2px, solid, red;
-	color: white;
-	// margin: 8px;
-  margin-bottom: 8px;
-	// background-color: rgba(58, 99, 81, .7);
-	padding-top: 10px;
-  height: 400px;
-}
+.background-container {
 
-.header_tent_content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-left: 40px;
-  padding-top: 20px;
-}
-
-.img_container {
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100% wh;
-}
-
-.wildlife-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: auto;
-  width: 100%;
-  background-color: rgba(200, 200, 200, 0.7);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  padding: 20px 20px 0px 20px
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
 }
 
-.card-product {
-  // overflow: hidden;
-  height: 300px;
-  width: 240px;
-  background-color: rgba(200, 200, 200, 0.7);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin-right: 40px;
-  margin-top: 20px;
+.grid-container {
+
+    display: flex;
+    margin: auto;
+
+    width: 1000px;
+    height: 500px;
+    background-color: white;
+
 }
 
-.form-book {
-  padding: 15px 15px 15px 15px;
+.container-foto {
+
+    //style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);">
+
+
+}
+
+.product-infos {}
+
+.photo-show {
+    border: 2px, solid, black;
+    color: white;
+    height: 100%;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.75);
+
+}
+
+.content-show {
+    padding: 35px;
+    width: 100%;
+    position: relative;
+
+}
+
+.content-upper-show {}
+
+#title-cost-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content-mid-show {
+    // overflow: scroll;
+}
+
+.content-low-show {}
+
+.start-end-absolute {
+    position: absolute;
+    bottom: 50px;
+    right: 12px;
+}
+
+.start-end-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.start-end-show p {
+    padding-right: 20px;
+}
+
+.book-show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 0;
+    right: 16px;
+    bottom: 10px;
 }
 
 .border-underline {
-  border-bottom: 3px solid #ebebe0;
+  border-top: 3px solid black;
 }
 
-.page{
-	background: #ADC797;
+.form-book {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+.form-book input {
+    margin: 20px;
+    padding: 5px;
+
 }
 
-section.booking_tent {
-	// background-color: #87BBA2;
-  width: 100% vw;
-}
-
-section.reviews_tent {
-	background-color: #c3c3a2;
-  padding: 10px 10px 10px 10px;
-}
 
 
 
-// @font-face {
-//   font-family: "Kaushan Script Regular";
-//   src: url(/assets/KaushanScript-Regular.otf) format("truetype");
+
+
+
+
+
+
+
+
+// .header_tent {
+
+//  padding-top: 10px;
+//   height: 400px;
 // }
+
+// .header_tent_content {
+//
+//   margin-left: 40px;
+//   padding-top: 20px;
+// }
+
+// .img_container {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   height: 100%;
+//   width: 100% wh;
+// }
+
+// .wildlife-box {
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: space-between;
+//   height: auto;
+//   width: 100%;
+//   background-color: rgba(200, 200, 200, 0.7);
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   padding: 20px 20px 0px 20px
+
+// }
+
+// .card-product {
+//   // overflow: hidden;
+//   height: 300px;
+//   width: 240px;
+//   background-color: rgba(200, 200, 200, 0.7);
+//   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+//   margin-right: 40px;
+//   margin-top: 20px;
+// }
+
+// .form-book {
+//   padding: 15px 15px 15px 15px;
+// }
+
+
+
+// .page{
+//  background: #ADC797;
+// }
+
+// section.booking_tent {
+//  // background-color: #87BBA2;
+//   width: 100% vw;
+// }
+
+// section.reviews_tent {
+//  background-color: #c3c3a2;
+//   padding: 10px 10px 10px 10px;
+// }
+
+
+
+// // @font-face {
+// //   font-family: "Kaushan Script Regular";
+// //   src: url(/assets/KaushanScript-Regular.otf) format("truetype");
+// // }

@@ -2,47 +2,121 @@
 <div id="content-wrapper">
     <div class="content-shadow">
         <div id="content-container">
-
-          <div class="background-container">
-
-            <div class="grid-container">
-                <div class="container-foto">
-                  <img src="" alt="" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);"> >
+<!--             <img src="" alt="" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);"> -->
+            <%= cl_image_tag(@tent.photo) %>
+            <div class="background-container">
+                <div>
+                    <div class="grid-container">
+                        <div class="photo-show">
+                            <div>
+                                <%= cl_image_tag(@tent.photo, width: 380, height: 300, crop: :fit) %>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>Small Photo</p>
+                                    <p>Small Photo</p>
+                                </div>
+                                <div>
+                                    <p>Small Photo</p>
+                                    <p>Small Photo</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-show">
+                            <div class="content-upper-show">
+                                <div id="title-cost-show">
+                                    <h1>
+                                        <%= @tent.title %>
+                                    </h1>
+                                    <h5>€
+                                        <%= @tent.price %>
+                                        </h3>
+                                </div>
+                                <div>
+                                    <p>
+                                        <%= @tent.description %>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content-mid-show">
+                                <div class="w3-row">
+                                    <a href="javascript:void(0)" onclick="openCity(event, 'London');">
+                                        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">Details</div>
+                                    </a>
+                                    <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
+                                        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Wildlife</div>
+                                    </a>
+                                    <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
+                                        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Reviews</div>
+                                    </a>
+                                </div>
+                                <div id="London" class="w3-container city" style="display:block">
+                                    <h5>Host:
+                                        <%= @tent.user.name %>
+                                    </h5>
+                                    <h5>Capacity:
+                                        <%= @tent.capacity %>
+                                    </h5>
+                                    <h5>Location:
+                                        <%= @tent.location %>
+                                    </h5>
+                                    <h5>Landscape: Forest
+                                    </h5>
+                                </div>
+                                <div id="Paris" class="w3-container city" style="display:none">
+                                    <p>
+                                        <% animal_array = @tent.wildlife.split(",") %>
+                                        <% animal_array.each do |animal| %>
+                                        <ul>
+                                            <li>
+                                                <%= animal %>
+                                            </li>
+                                        </ul>
+                                        <% end %>
+                                    </p>
+                                </div>
+                                <div id="Tokyo" class="w3-container city" style="display:none">
+                                    <p>We thoroughly enjoyed our stay! The tent was clean and comfortable, and the nearby activities were fun and affordable.</p>
+                                    <p>Although we lost our youngest to a bear attack, we still had a great time, as did the children which survived! Yay!</p>
+                                    <p>What a fantastic trip! The city truly does get to be too much at times, and a relaxing weekend escape does magic for my back.</p>
+                                    <p>This group of weird developers sadly ruined my holiday.</p>
+                                    <p>Reminds me of when I went camping with my fruncle Steve.</p>
+                                </div>
+                                <script>
+                                    function openCity(evt, cityName) {
+                                    var i, x, tablinks;
+                                    x = document.getElementsByClassName("city");
+                                    for (i = 0; i < x.length; i++) {
+                                        x[i].style.display = "none";
+                                    }
+                                    tablinks = document.getElementsByClassName("tablink");
+                                    for (i = 0; i < x.length; i++) {
+                                        tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+                                    }
+                                    document.getElementById(cityName).style.display = "block";
+                                    evt.currentTarget.firstElementChild.className += " w3-border-red";
+                                }
+                                </script>
+                            </div>
+                            <div class="content-low-show">
+                                <div class="start-end-absolute">
+                                    <div class="start-end-show">
+                                        <form class="form-book">
+                                            <input type="text" name="start date" value="Start Date">
+                                            <input type="text" name="end date" value="End Date">
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="book-show" class="border-underline">
+                                    <%= link_to 'Book Now!', new_tent_path, class:"btn btn-primary"%>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="product-infos">
-                    <h1>
-                        <%= @tent.title %>
-                    </h1>
-                    <p>
-                        <%= @tent.description %>
-                    </p>
-                    <h5>Host:
-                        <%= @tent.user.name %>
-                    </h5>
-                    <h5>Capacity:
-                        <%= @tent.capacity %>
-                        </h3>
-                        <h5>€
-                            <%= @tent.price %>
-                            </h3>
-                </div>
-                <h3>Wildlife:</h3>
-                <p>
-                    <% animal_array = @tent.wildlife.split(",") %>
-                    <% animal_array.each do |animal| %>
-                    <ul>
-                        <li>
-                            <%= animal %>
-                        </li>
-                    </ul>
-                    <% end %>
-                </p>
             </div>
-
-          </div>
-
         </div>
     </div>
 </div>
-</div>
 <%= render 'components/footer' %>
+</div>
