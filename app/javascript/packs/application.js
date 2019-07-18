@@ -6,6 +6,9 @@ import {
   smoothScroll
 } from "./scroll_to_element";
 
+import { intelligentBackgroundInit } from "./intelligent_background";
+
+intelligentBackgroundInit();
 searchBarInit();
 
 // header arrow auto scrolling (it's not perfect)

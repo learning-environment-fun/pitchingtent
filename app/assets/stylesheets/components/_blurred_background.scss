@@ -1,0 +1,47 @@
+.background-intelligent-cover {
+
+    &:not(#page-container) {
+        overflow: hidden;
+    }
+
+    position: relative;
+
+    &#page-container .before {
+        z-index: $footer-low-z-index - 2;
+        height: 100%;
+    }
+
+    &.is-fixed-to-viewport .before {
+        background-attachment: fixed;
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: -5%;
+        left: -5%;
+        right: 0;
+        bottom: 0;
+        z-index: $footer-low-z-index - 1; // gets overridden in JS to be inherit - 1 (effectively)
+        width: 110%;
+        height: 110%;
+
+        &.is-blurred {
+            -webkit-filter: blur($background-blur-amount);
+            -moz-filter: blur($background-blur-amount);
+            -o-filter: blur($background-blur-amount);
+            -ms-filter: blur($background-blur-amount);
+            filter: blur($background-blur-amount);
+        }
+
+        background-size: cover;
+    }
+
+    &.blurred-autumn .before {
+        background-image: image-url('background_autumn.jpg');
+    }
+}
