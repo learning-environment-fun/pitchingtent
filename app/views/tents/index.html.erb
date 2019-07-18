@@ -2,7 +2,7 @@
 <div id="content-wrapper" class="header-present background-intelligent-cover is-blurred is-fixed-to-viewport" data-background-image="<%= image_path 'background_autumn.jpg' %>">
     <div class="content-shadow">
         <div id="content-container">
-            <div class="grid-content py-4">
+            <div class="grid-content py-4 mb-4">
                 <div>
                     <h3>Book a Tent – Escape Now.</h3>
                     <p>Utilize Pitch-a-Tent to blow off some steam, escaping city-life stress. Our service provides a plethora of options, ensuring everyone can find an experience they enjoy!</p>
@@ -26,9 +26,14 @@
                     </ul>
                 </div>
             </div>
-            <hr>
+            
+            <div class="icon_hr">
+                <i class="fas fa-paw"></i>
+                <i class="fas fa-feather"></i>
+                <i class="fas fa-crow"></i>
+            </div>
 
-            <div class="cards-content">
+            <div class="cards-content mt-4">
                 <div class="cards">
                     <% @tents.each do |tent| %>
                     <%= link_to tent_path(tent), class:"card-link" do %>
