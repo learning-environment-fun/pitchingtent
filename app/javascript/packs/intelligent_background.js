@@ -2,6 +2,7 @@ const intelligentBackgroundInit = () => {
   const backgrounds = document.querySelectorAll('.background-intelligent-cover').forEach((background) => {
 
     const url = background.getAttribute('data-background-image');
+    // console.log(background.classList);
     const before = document.createElement('div');
     before.className = 'before';
     before.style.backgroundImage = `url('${url}')`;
@@ -16,9 +17,10 @@ const intelligentBackgroundInit = () => {
       before.style.zIndex = before.parentElement.zIndex - 1;
     }
 
-    console.log(url);
+    console.log(before.parentElement.classList);
+    console.log(background.classList);
   });
-  console.log(`${backgrounds.length} backgrounds`);
+  // console.log(`${backgrounds.length} backgrounds`);
 }
 
 export { intelligentBackgroundInit };

@@ -16,7 +16,6 @@
     &.is-fixed-to-viewport {
         .before {
             background-attachment: fixed;
-            background-size: cover;
         }
     }
 
@@ -32,16 +31,41 @@
         width: 110%;
         height: 110%;
 
+        background-attachment: scroll;
         background-size: cover;
+        filter: none;
     }
 
     &.is-blurred {
         .before {
-            -webkit-filter: blur($background-blur-amount);
+            /*-webkit-filter: blur($background-blur-amount);
             -moz-filter: blur($background-blur-amount);
             -o-filter: blur($background-blur-amount);
-            -ms-filter: blur($background-blur-amount);
+            -ms-filter: blur($background-blur-amount);*/
             filter: blur($background-blur-amount);
+        }
+    }
+
+    // there's some weird-ass bugs with classes applying to elements
+    // when those elements don't actually possess those classes :(
+    // we have to use these overrides
+
+    &.only-cover {
+        .before {
+            filter: none !important;
+            background-attachment: scroll !important;
+        }
+    }
+
+    &.no-blur {
+        .before {
+            filter: none !important;
+        }
+    }
+
+    &.not-fixed {
+        .before {
+            background-attachment: scroll !important;
         }
     }
 
