@@ -15,6 +15,13 @@ class Tent < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def self.wildlife_options
-    ["Bear", "Moose", "Felix", "Charles", "Alex", "Freddy"]
+    ["Bear", "Cactus", "Freddy", "Deer", "Fish", "Moose", "Raccoon", "Spider", "Squirrel", "Turkey"]
   end
+
+  include PgSearch
+  pg_search_scope :search_tents,
+    against: [:title, :description, :location, :wildlife],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

@@ -3,7 +3,11 @@ class TentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index, :new]
 
   def index
-    @tents = Tent.all
+    if params[:query]
+      @tents = Tent.search_tents(params[:query])
+    else
+      @tents = Tent.all
+    end
   end
 
   def show
