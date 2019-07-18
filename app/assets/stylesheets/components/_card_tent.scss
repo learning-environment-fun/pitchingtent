@@ -1,14 +1,13 @@
+.card-thumbnail {
+  flex-grow: 1;
+  width: 100%;
+}
+
 .card-trip {
-  overflow: hidden;
+  // overflow: hidden;
   background: white;
   // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease-in-out;
-}
-
-.card-trip>img {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
 }
 
 .card-trip h2 {
@@ -54,6 +53,13 @@
 }
 
 .card-link {
+
+  height: 30vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column-reverse;
+
   text-decoration: none;
   color: $blue;
 

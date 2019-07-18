@@ -1,0 +1,23 @@
+<%= link_to tent_path(tent), class:"card-link" do %>
+
+<div class="card-trip">
+    <div class="card-trip-infos">
+        <div>
+            <h2>
+                <%= tent.title %>
+            </h2>
+            <p>
+                <%= tent.description %>
+            </p>
+        </div>
+        <h2 class="card-trip-pricing">
+            <%= tent.price %> €</h2>
+        <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered" /> -->
+        <i class="fab fa-apple-pay card-trip-user d-block payment-avatar"></i>
+    </div>
+</div>
+
+<div class="card-thumbnail background-intelligent-cover" data-background-image="<%= tent.photo %>">
+</div>
+
+<% end %>
