@@ -11,6 +11,13 @@ gem 'inline_svg'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 
+# Faker for the Seed (fcjn)
+gem 'faker'
+
+# Charles is a weinerhead
+# PG Search for the Searchbar (FCJN)
+gem 'pg_search'
+
 gem 'bootsnap', require: false
 gem 'jbuilder', '~> 2.0'
 gem 'pg', '~> 0.21'
