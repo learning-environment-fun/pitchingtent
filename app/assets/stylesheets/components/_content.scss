@@ -5,6 +5,11 @@
   flex-direction: column;
   margin: 0;
   padding-bottom: $footer-height;
+  padding-top: $navbar-height;
+
+  &.header-present {
+    padding-top: 0;
+  }
 
   #content-container {
     width: $content-container-width;

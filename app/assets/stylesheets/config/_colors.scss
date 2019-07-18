@@ -26,7 +26,7 @@ $searchbar-dark-focus-color: $light-gray;
 $searchbar-dark-shadow-color: white;
 
 $searchbar-light-background-color: rgba(245, 245, 245, 1);
-$searchbar-light-border-color: 1px darken($gray, 50%);
+$searchbar-light-border-color: darken($gray, 50%);
 $searchbar-light-color: $gray;
 $searchbar-light-focus-color: darken($gray, 20%);
 $searchbar-light-shadow-color: black;

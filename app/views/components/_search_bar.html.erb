@@ -1,9 +1,15 @@
 <% is_in_header ||= false %>
 <% class_string = is_in_header ? ' is-in-header' : ' is-light' %>
 <div class="search-bar<%= class_string %>">
-    <a href="" id="search-bar-logo-and-drop-down">
-        <i id='search-bar-dropdown-arrow' class="fas fa-arrow-alt-circle-down"></i>
-    </a>
+    <span id="search-bar-logo-and-drop-down">
+        <%= link_to root_path do %>
+            <%= inline_svg "tepee.svg", class: 'logo-svg' %>
+        <% end %>
+        <span id='search-bar-dropdown-arrow'>
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-up is-invisible"></i>
+        </span>
+    </span>
     <span id="search-bar-text-field">
         <span id="search-bar-icon"><i class="fas fa-search"></i></span>
         <form action="" class="search-form">
@@ -12,8 +18,17 @@
     </span>
     <!-- Other option: btn-custom-outline blue -->
     <span id="search-bar-buttons">
-        <%= link_to 'Login', new_user_session_path, class:"btn btn-primary"%>
-        <a href="" class="btn btn-custom-outline gray">List Home</a>
-        <a href="" class="btn btn-custom-outline gray">List Home</a>
+        <span class="avatar-circle">
+            <%= image_tag 'headshot.jpg' %>
+        </span>
     </span>
+</div>
+
+<% class_string = is_in_header ? 'header-present' : '' %>
+<div id="user-menu" class="<%= class_string %>">
+    <ul>
+        <li><i class="fas fa-user-circle"></i><span>Profile</span></li>
+        <li><i class="fas fa-cog"></i><span>Account</span></li>
+        <li><i class="fas fa-sign-out-alt"></i><span>Log Out</span></li>
+    </ul>
 </div>

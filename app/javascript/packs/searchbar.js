@@ -11,11 +11,12 @@ const searchBarInit = () => {
   if (searchBar !== null) {
     searchBarOriginalParent = searchBar.parentElement;
     searchBarInput = searchBar.querySelector('input');
-    searchBarIcon = searchBar.querySelector('.search-bar-icon');
+    searchBarIcon = document.getElementById('search-bar-icon');
 
     searchBarFadeInit();
     searchBarScrollTrackingInit();
     searchBarFocusDetectInit();
+    searchBarDropDownListenerInit();
   }
 }
 
@@ -36,10 +37,18 @@ const searchBarScrollTrackingInit = () => {
 
     const originalParentRect = searchBarOriginalParent.getBoundingClientRect();
 
+    const userMenu = document.getElementById('user-menu');
+    // update menu dropdown if there's a header and the menu is open
+    if (!Array.from(userMenu.classList).includes('is-detached') &&
+      Array.from(userMenu.classList).includes('header-present')) {
+      userMenu.style.top = `${originalParentRect.bottom}px`;
+    }
+
     // if (searchBar.parentElement === searchBarOriginalParent) {
     if (originalParentRect.bottom - searchBarHeight <= 0) {
       if (!Array.from(searchBar.classList).includes('is-detached')) {
         searchBar.classList.toggle('is-detached');
+        document.getElementById('user-menu').classList.toggle('is-detached');
 
         // remove from flow
         document.getElementById('page-container').appendChild(searchBar);
@@ -55,7 +64,7 @@ const searchBarScrollTrackingInit = () => {
     } else {
       if (Array.from(searchBar.classList).includes('is-detached')) {
         searchBar.classList.toggle('is-detached');
-
+        document.getElementById('user-menu').classList.toggle('is-detached');
         // add back to flow
         searchBarOriginalParent.appendChild(searchBar);
 
@@ -90,6 +99,60 @@ const searchBarFocusDetectInit = () => {
     }
   });
 }
+
+const searchBarDropDownListenerInit = () => {
+  const avatar = searchBar.querySelector('.avatar-circle');
+  const arrow = searchBar.querySelector('#search-bar-dropdown-arrow');
+
+  avatar.addEventListener('click', (_event) => {
+    dropDownHelper();
+  });
+
+  arrow.addEventListener('click', (_event) => {
+    arrow.firstElementChild.classList.toggle('is-invisible');
+    arrow.lastElementChild.classList.toggle('is-invisible');
+    dropDownHelper();
+  });
+};
+
+const dropDownHelper = () => {
+  const userMenu = document.getElementById('user-menu');
+
+  let timeOutLength = 5;
+
+  if (Array.from(userMenu.classList).includes('is-visible')) {
+    timeOutLength += 400;
+  }
+
+  setTimeout(() => {
+    userMenu.classList.toggle('is-visible');
+
+    // turning off
+    if (!Array.from(userMenu.classList).includes('is-visible')) {
+      userMenu.style = ''; // reset inline style 
+    }
+    // turning on, special header case
+    else if (!Array.from(userMenu.classList).includes('is-detached') &&
+      Array.from(userMenu.classList).includes('header-present')) {
+
+      userMenu.style.top = `${searchBarOriginalParent.getBoundingClientRect().bottom}px`;
+    } else {
+      userMenu.style = '';
+    }
+  }, timeOutLength);
+
+  // always enable transitions 
+  userMenu.classList.toggle('transitions-on');
+
+  // turning off
+  if (Array.from(userMenu.classList).includes('is-visible')) {
+    // destination position 
+    userMenu.style.top = '-40vh';
+  }
+
+  // transition will alway take 400 seconds, + delay for turn visible
+  setTimeout(() => userMenu.classList.toggle('transitions-on'), 405);
+};
 
 export {
   searchBarInit
