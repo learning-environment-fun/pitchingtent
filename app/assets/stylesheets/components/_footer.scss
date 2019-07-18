@@ -5,7 +5,7 @@ footer {
     position: absolute;
     bottom: 0;
     flex-grow: 0;
-    z-index: -1;
+    z-index: $footer-low-z-index;
 
     background: #F4F4F4;
     display: flex;
@@ -15,7 +15,7 @@ footer {
     color: rgba(0, 0, 0, 0.3);
 
     &.above {
-      z-index: 3;
+        z-index: $footer-high-z-index;
     }
 
     .footer-links {

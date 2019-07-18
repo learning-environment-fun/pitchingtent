@@ -1,29 +1,66 @@
 .search-bar {
+
+    z-index: $footer-high-z-index + 3;
+
+    -webkit-transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    -o-transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    -moz-transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+
+    transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    transition: color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    transition: border-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    transition: filter $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 50px;
+    height: $navbar-height;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: $searchbar-dark-background-color;
 
     overflow: hidden;
-    border: 1px darken($gray, 50%);
+    border: 1px solid $searchbar-dark-border-color;
 
-    color: darken($light-gray, 20%);
+    color: $searchbar-dark-color;
 
-    position: absolute;
-    bottom: 0;
+
     padding: 0 30px;
 
-    >span {
+    box-shadow: 0 0 2.25rem rgba(0, 0, 0, 0.8);
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    &.is-in-header {
+        position: absolute;
+        bottom: 0;
+        top: auto;
+    }
+
+    &.is-detached {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        // -webkit-transform: translate3d(0, 0, 0);
+        // transform: translate3d(0, 0, 0);
+    }
+
+    #search-bar-text-field {
         flex-grow: 1;
+        display: flex;
+
+        @media screen and (max-width: $smartphone-width) {
+            flex-shrink: 1;
+        }
     }
 
     form {
         display: inline-block;
         height: 50px;
         width: 80%;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: none;
         border: none;
 
         input {
@@ -31,42 +68,225 @@
             border: none;
             width: 100%;
             height: 100%;
-            color: darken($light-gray, 20%);
+            color: $searchbar-dark-color;
 
-            transition: filter 0.3s ease-in-out;
-            transition: -webkit-filter 0.3s ease-in-out;
+            transition: filter $searchbar-color-transition-time ease-in-out;
+            transition: -webkit-filter $searchbar-color-transition-time ease-in-out;
+            transition: color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
 
             filter: none;
+            outline: none;
 
-            &:focus {
-                color: $light-gray;
+            &:hover {
+                color: $searchbar-dark-focus-color;
                 border: none;
-                font-weight: bold;
-                filter: drop-shadow(0 0 0.4rem white);
-                outline: none;
+                // font-weight: bold;
+                filter: drop-shadow(0 0 0.4rem $searchbar-dark-shadow-color);
+
             }
         }
     }
 
-    .search-bar-icon {
+    #search-bar-icon {
         float: left;
         display: flex;
         flex-direction: column;
         justify-content: center;
         height: 50px;
         padding: 0 1rem;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: none;
 
-        transition: filter 0.3s ease-in-out;
-        transition: -webkit-filter 0.3s ease-in-out;
+        transition: filter $searchbar-color-transition-time ease-in-out;
+        transition: -webkit-filter $searchbar-color-transition-time ease-in-out;
+        transition: color $searchbar-color-transition-time ease-in-out;
 
         filter: none;
 
-        &.is-focused {
-            color: $light-gray;
-            filter: drop-shadow(0 0 0.4rem white);
+        &.is-hovered {
+            color: $searchbar-dark-focus-color;
+            filter: drop-shadow(0 0 0.4rem $searchbar-dark-shadow-color);
         }
     }
+
+    #search-bar-buttons {
+        display: flex;
+        justify-content: flex-end;
+
+        .btn {
+            margin-right: 0.4rem;
+        }
+
+        @media screen and (max-width: $smartphone-width) {
+            display: none;
+        }
+
+        .avatar-circle {
+            display: inline-block;
+
+            filter: none;
+
+            transition: filter $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+
+            &:hover {
+                filter: drop-shadow(0 0 0.4rem $searchbar-dark-shadow-color);
+            }
+
+            img {
+                border-radius: 50%;
+                height: 0.6 * $navbar-height;
+            }
+        }
+    }
+
+    #search-bar-logo-and-drop-down {
+
+        display: flex;
+        align-items: center;
+
+        color: $searchbar-dark-color;
+        transition: color $searchbar-color-transition-time ease-in-out;
+
+        .logo-svg {
+            height: 0.7 * $navbar-height;
+            display: inline-block;
+        }
+
+        #search-bar-dropdown-arrow {
+            display: none;
+            font-size: 1.5rem;
+            padding-left: 0.3rem;
+
+            i.is-invisible {
+                display: none;
+            }
+
+            @media screen and (max-width: $smartphone-width) {
+                display: inline-block;
+            }
+        }
+
+
+    }
+}
+
+.search-bar.is-light {
+
+    #search-bar-buttons {
+        .avatar-circle:hover {
+            filter: drop-shadow(0 0 0.4rem $searchbar-light-shadow-color);
+        }
+    }
+
+    #search-bar-dropdown-arrow {
+        color: $searchbar-light-color;
+    }
+
+    // can only get one-way background-color transition to work; 
+    // might be a glitch? 
+    // all other transitions work two-way
+    transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+
+    background-color: $searchbar-light-background-color;
+    color: $searchbar-light-color;
+
+    form {
+
+        input {
+            color: $searchbar-light-color;
+
+            &:hover {
+                color: $searchbar-light-focus-color;
+                filter: drop-shadow(0 0 0.4rem $searchbar-light-shadow-color);
+            }
+        }
+    }
+
+    #search-bar-icon {
+
+        &.is-hovered {
+            color: $searchbar-light-focus-color;
+            filter: drop-shadow(0 0 0.4rem $searchbar-light-shadow-color);
+        }
+    }
+}
+
+#user-menu {
+
+    opacity: 0;
+
+    &.transitions-on {
+        display: block;
+        transition: all $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+    }
+
+    &.is-visible {
+        opacity: 1;
+        display: block;
+        top: $navbar-height;
+
+        &.header-present {
+            top: $header-height;
+
+            &.is-detached {
+                top: $navbar-height;
+            }
+        }
+    }
+
+    display: none;
+    top: -40vh;
+    position: fixed;
+    right: 0;
+    left: auto;
+
+    z-index: $footer-high-z-index+2;
+
+    width: 30vw;
+
+    padding: 0;
+    background-color: $searchbar-light-background-color;
+    color: $searchbar-light-color;
+
+
+    @media screen and (max-width: $smartphone-width) {
+        width: 100vw;
+        right: auto;
+        left: 0;
+    }
+
+    ul {
+        list-style-type: none;
+        list-style-position: unset;
+        padding: 0;
+        margin: 0;
+
+        li {
+            >span {
+                flex-grow: 1;
+                padding-left: 30px;
+            }
+
+            display: flex;
+            align-content: flex-end;
+            align-items: center;
+            padding-left: 50%;
+            padding-right: 0.7rem;
+            padding-top: 0.2rem;
+            padding-bottom: 0.2rem;
+
+            font-size: 1.5rem;
+
+            border-bottom: 2px solid $searchbar-light-color;
+            color: $searchbar-light-color;
+            background-color: none;
+            transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
+
+            &:hover {
+                background-color: darken($searchbar-light-background-color, 30%);
+            }
+        }
+    }
+
 
 
 }

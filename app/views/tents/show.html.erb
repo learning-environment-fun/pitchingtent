@@ -1,84 +1,90 @@
-<%= render 'components/navbar' %>
+<%= render 'components/search_bar' %>
 <div id="content-wrapper">
-    <div id="content-container">
-        <section class="details_tent">
-            <div class="header_tent">
-                <div class="img_container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);">
-                  <div class="header_tent_content">
-                    <div>
-                      <div>
-                      <h1>
-                          <%= @tent.title %>
-                      </h1>
-                      <p>
-                          <%= @tent.description %>
-                      </p>
-                      <h5>Host: <%= @tent.user.name %></h5>
-                      <h5>Capacity: <%= @tent.capacity %></h3>
-                      <h5>€<%= @tent.price %>/night</h3>
-                      </div>
-                      <br>
-                      <br>
-                      <h3>Wildlife:</h3>
-                      <div class="wildlife-box">
+    <div class="content-shadow">
+        <div id="content-container">
+            <section class="details_tent">
+                <div class="header_tent">
+                    <div class="img_container"
+                        style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);">
+                        <div class="header_tent_content">
+                            <div>
+                                <div>
+                                    <h1>
+                                        <%= @tent.title %>
+                                    </h1>
+                                    <p>
+                                        <%= @tent.description %>
+                                    </p>
+                                    <h5>Host: <%= @tent.user.name %></h5>
+                                    <h5>Capacity: <%= @tent.capacity %></h3>
+                                        <h5>€<%= @tent.price %>/night</h3>
+                                </div>
+                                <br>
+                                <br>
+                                <h3>Wildlife:</h3>
+                                <div class="wildlife-box">
 
-                        <p>
-                            <% animal_array = @tent.wildlife.split(",") %>
-                            <% animal_array.each do |animal| %>
-                            <ul>
-                                <li>
-                                    <%= animal %>
-                                </li>
-                            </ul>
-                            <% end %>
-                        </p>
-                      </div>
+                                    <p>
+                                        <% animal_array = @tent.wildlife.split(",") %>
+                                        <% animal_array.each do |animal| %>
+                                        <ul>
+                                            <li>
+                                                <%= animal %>
+                                            </li>
+                                        </ul>
+                                        <% end %>
+                                    </p>
+                                </div>
 
+                            </div>
+                            <div class="card-product">
+                                <form class="form-book">
+                                    Start Date:<br>
+                                    <input type="text" name="start date"><br>
+                                    <br>
+                                    End Date:<br>
+                                    <input type="text" name="end date">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <input type="submit" value="Book Now">
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-product">
-                        <form class="form-book">
-                          Start Date:<br>
-                          <input type="text" name="start date"><br>
-                          <br>
-                          End Date:<br>
-                          <input type="text" name="end date">
-                          <br>
-                          <br>
-                                                    <br>
-                          <br>
-                          <input type="submit" value="Book Now">
-                        </form>
-                    </div>
-                  </div>
+
                 </div>
+            </section>
+            <section class="booking_tent">
+                <div class="container">
+                    <div class="show_top_container">
 
-            </div>
-        </section>
-        <section class="booking_tent">
-            <div class="container">
+                        <div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="reviews_tent">
                 <div class="show_top_container">
-
-                    <div>
-
-
-
-                    </div>
+                    <h3 class="border-underline">Reviews</h3>
+                    <p>We thoroughly enjoyed our stay! The tent was clean and comfortable, and the nearby activities
+                        were fun and affordable.</p>
+                    <p>Although we lost our youngest to a bear attack, we still had a great time, as did the children
+                        which survived! Yay!</p>
+                    <p>What a fantastic trip! The city truly does get to be too much at times, and a relaxing weekend
+                        escape does magic for my back.</p>
+                    <p>This group of weird developers sadly ruined my holiday.</p>
+                    <p>Reminds me of when I went camping with my fruncle Steve.</p>
                 </div>
-            </div>
-        </section>
-        <section class="reviews_tent">
-            <div class="show_top_container">
-                <h3 class="border-underline">Reviews</h3>
-                <p>We thoroughly enjoyed our stay! The tent was clean and comfortable, and the nearby activities were fun and affordable.</p>
-                <p>Although we lost our youngest to a bear attack, we still had a great time, as did the children which survived! Yay!</p>
-                <p>What a fantastic trip! The city truly does get to be too much at times, and a relaxing weekend escape does magic for my back.</p>
-                <p>This group of weird developers sadly ruined my holiday.</p>
-                <p>Reminds me of when I went camping with my fruncle Steve.</p>
-            </div>
-        </section>
-        <section class="footer_tent">
-            <!-- INJECT FOOTER -->
-        </section>
+            </section>
+            <section class="footer_tent">
+                <!-- INJECT FOOTER -->
+            </section>
+        </div>
     </div>
 </div>
 <%= render 'components/footer' %>

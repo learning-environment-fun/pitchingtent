@@ -9,3 +9,24 @@ $green: #1EDD88;
 $gray: #0E0E0E;
 $light-gray: #F4F4F4;
 $footer-grey: #e6e6e6;
+
+
+// colors to be used by the nav/search bar
+// navbar has two modes: dark mode, light mode
+// accordingly, possesses two distinct (inverted) color sets
+// additionally, standard color transition time is here defined
+
+$searchbar-color-transition-time: 0.2s;
+$searchbar-color-transition-ease-type: ease-in-out;
+
+$searchbar-dark-background-color: rgba(0, 0, 0, 0.6);
+$searchbar-dark-border-color: 1px darken($gray, 50%);
+$searchbar-dark-color: darken($light-gray, 20%);
+$searchbar-dark-focus-color: $light-gray;
+$searchbar-dark-shadow-color: white;
+
+$searchbar-light-background-color: rgba(245, 245, 245, 1);
+$searchbar-light-border-color: darken($gray, 50%);
+$searchbar-light-color: $gray;
+$searchbar-light-focus-color: darken($gray, 20%);
+$searchbar-light-shadow-color: black;
