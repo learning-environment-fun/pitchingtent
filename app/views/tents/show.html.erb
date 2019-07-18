@@ -1,5 +1,6 @@
 <%= render 'components/search_bar' %>
 <div id="content-wrapper">
+<!-- <div id="content-wrapper" class="background-intelligent-cover is-fixed-to-viewport" data-background-image="<%= cl_image_path(@tent.photo) %>"> -->
     <div class="content-shadow">
         <div id="content-container">
 <!--             <img src="" alt="" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);"> -->
@@ -8,10 +9,10 @@
                 <div>
                     <div class="grid-container">
                         <div class="photo-show">
-                            <div>
-                                <%= cl_image_tag(@tent.photo, width: 380, height: 300, crop: :fit) %>
-                            </div>
-                            <div>
+                            <!-- <div> -->
+                                <%= cl_image_tag(@tent.photo, width: 380, crop: :fit) %>
+                            <!-- </div> -->
+                            <!-- <div>
                                 <div>
                                     <p>Small Photo</p>
                                     <p>Small Photo</p>
@@ -20,7 +21,7 @@
                                     <p>Small Photo</p>
                                     <p>Small Photo</p>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="content-show">
                             <div class="content-upper-show">
