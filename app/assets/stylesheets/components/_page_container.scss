@@ -8,6 +8,8 @@
     overflow: auto;
     overflow-x: hidden;
     flex-wrap: nowrap;
+
+    // z-index: $footer-low-z-index - 2;
 }
 
 body {
