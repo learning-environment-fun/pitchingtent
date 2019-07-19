@@ -1,23 +1,32 @@
-<%= link_to tent_path(tent), class:"card-link-wrapper" do %>
+<%= link_to tent_path(tent), class:"tent-card" do %>
 
-<div class="card-trip">
-    <div class="card-trip-infos">
-        <div>
-            <h2>
-                <%= tent.title %>
-            </h2>
-            <p>
-                <%= tent.description %>
-            </p>
-        </div>
-        <h2 class="card-trip-pricing">
-            <%= tent.price %> €</h2>
-        <!-- <img src='https://kitt.lewagon.com/placeholder/users/krokrob' class="card-trip-user avatar-bordered" /> -->
-        <i class="fab fa-apple-pay card-trip-user d-block payment-avatar"></i>
-    </div>
+<div class="tent-card-up-thumbnail background-intelligent-cover only-cover"
+    data-background-image="<%= cl_image_path tent.photo %>">
 </div>
 
-<div class="card-thumbnail background-intelligent-cover only-cover" data-background-image="<%= tent.photo %>">
+<div class="tent-card-down-content">
+
+    <div class="tent-card-content-left">
+        <div class="flex-child">
+            <h2 class="tent-card-title"><%= tent.title %></h1>
+        </div>
+        <div class="flex-child">
+            <p class="tent-card-description"><%= tent.description %></p>
+        </div>
+    </div>
+
+    <div class="tent-card-content-right">
+        <div class="tent-card-payment-icon">
+            <%= inline_svg "apple_pay2.svg" %>
+            <svg width="90" height="90" class="logo icon--white">
+                <use xlink:href="#logo" class="apple-pay-white" />
+            </svg>
+        </div>
+
+        <div class="tent-card-price">
+            <h3><%= tent.price > 999 ? (tent.price.to_f / 1000.to_f).round(1).to_s + 'k' : tent.price %> €</h3>
+        </div>
+    </div>
 </div>
 
 <% end %>
