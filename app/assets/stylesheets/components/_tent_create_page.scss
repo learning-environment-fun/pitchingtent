@@ -11,6 +11,7 @@
     background-repeat: no-repeat;
     background-size: contains;
     position: relative;
+
 }
 
 .tent-wrapper {
@@ -58,4 +59,50 @@
     }
 }
 
+
+.login-wrapper {
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    @media screen and (max-width: 600px) {
+        width: 60vw;
+    }
+
+    width: 41vw;
+
+    // height: 100%;
+
+    .btn {
+
+        border-radius: 10%;
+        color: black;
+        padding: 10px;
+        background-color: white;
+        /*position: absolute;
+        right: -150px;
+        bottom: 200px;*/
+    }
+
+    .btn:hover {
+        color: white;
+        background-color: black;
+    }
+
+}
+
+.login-form {
+    position: absolute;
+    right: 65%;
+    padding: 100px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
+
+    input {
+        border-top: rgba(0, 0, 0, 0);
+        border-left: rgba(0, 0, 0, 0);
+        border-right: rgba(0, 0, 0, 0);
+        border-bottom: 1px solid white;
+
+    }
+}
 

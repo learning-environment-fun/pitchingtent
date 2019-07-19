@@ -26,11 +26,16 @@
 
 <% class_string = is_in_header ? 'header-present' : '' %>
 <div id="user-menu" class="<%= class_string %>">
+  <% if current_user %>
     <ul>
         <li><i class="fas fa-user-circle"></i> <%= link_to 'View Profile', user_path %></li>
-        
+
         <li><i class="fas fa-cog"></i> <%= link_to 'Edit Account', edit_user_registration_path %> </li>
-        
+
         <li><i class="fas fa-sign-out-alt"></i> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
     </ul>
+    <% else %>
+      <li><i class="fas fa-user-circle"></i> <%= link_to 'Create Account', new_user_registration_path %></li>
+      <li><i class="fas fa-sign-out-alt"></i> <%= link_to 'Log In', new_user_session_path %></li>
+    <% end %>
 </div>

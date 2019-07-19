@@ -1,7 +1,7 @@
 <div id="content-wrapper" class="content-create-tent">
 <!--    <div class="content-create-tent">-->
-        <div class="tent-wrapper">
-            <div class="tent-form">
+        <div class="login-wrapper">
+            <div class="login-form">
             <h2>Log in</h2>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inputs">
@@ -22,4 +22,4 @@
         </div>
     </div>
 </div>
-<%= render partial:'/components/footer', locals: { is_above: true } %>
+
