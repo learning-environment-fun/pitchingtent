@@ -1,18 +1,5 @@
 <%= render 'components/search_bar' %>
-<<<<<<< HEAD
-<div id="content-wrapper" class="content-create-tent">
-    <div class="content-shadow">
-        <!--    <div class="content-create-tent">-->
-        <div class="tent-wrapper">
-            <div class="tent-form">
-                <h2>Log in</h2>
-                <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <div class="form-inputs">
-                    <%= f.input :email,
-=======
-
-<div id="content-wrapper" class="background-intelligent-cover is-blurred is-fixed-to-viewport"
-    data-background-image="<%= image_path('background_lake_tent_edited.jpg') %>">
+<div id="content-wrapper" class="background-intelligent-cover is-blurred is-fixed-to-viewport" data-background-image="<%= image_path('background_lake_tent_edited.jpg') %>">
     <div class="content-shadow">
         <!--    <div class="content-create-tent">-->
         <div id="content-container">
@@ -22,7 +9,6 @@
                     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                     <div class="form-inputs">
                         <%= f.input :email,
->>>>>>> aa0786a308ba3ac532d15c3fdcef0cb3371e7505
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
@@ -41,8 +27,4 @@
         </div>
     </div>
 </div>
-<<<<<<< HEAD
 <%= render partial:'/components/footer', locals: { is_above: true } %>
-=======
-<%= render partial:'/components/footer', locals: { is_above: true } %>
->>>>>>> aa0786a308ba3ac532d15c3fdcef0cb3371e7505
