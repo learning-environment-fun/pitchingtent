@@ -1,7 +1,14 @@
-<div>
-	<h2>Good afternoon <%= current_user.name %></h2>
-	<br>
-	<h3>Your Bio</h3>
-	<p>(<strong>Note</strong> - Other Users can view this!)</p>
+<%= render 'components/search_bar' %>
+<div id="content-wrapper">
+    <div class="content-shadow">
+        <div id="content-container">
+            <!-- until now i just copied the standard divs, below here i copied the tent.show page -->
+        <div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2>Product name</h2>
+    <p>Product description with <strong>relevant info</strong> only.</p>
+  </div>
 </div>
-
+            <%= render 'components/footer' %>
+        </div>
