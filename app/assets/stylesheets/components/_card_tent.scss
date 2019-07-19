@@ -1,88 +1,166 @@
-.card-thumbnail {
-  flex-grow: 1;
-  width: 100%;
-}
+// starting fresh--reimplemented
 
-.card-trip {
-  // overflow: hidden;
-  background: white;
-  // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease-in-out;
-}
-
-.card-trip h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
-}
-
-.card-trip p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
-
-
-.card-trip .card-trip-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
-.card-trip-infos .card-trip-user {
-  position: absolute;
-  right: 16px;
-  top: -20px;
-  width: 40px;
-}
-
-.payment-avatar {
-  display: block;
-  background-color: $blue;
-  border-radius: 20%;
-  color: white;
-  text-align: center;
-  font-size: 24px;
-  padding: 5px;
-  width: 40px;
+.tent-card {
 
   transition: all 0.3s ease-in-out;
 
-}
+  &:hover {
+    text-decoration: none;
+    color: $tent-card-hover-color;
+    box-shadow: 0 0 35px rgba(darken($blue, 30%), 0.5);
 
-.card-link-wrapper {
+    .tent-card-down-content {
+      background-color: $tent-card-hover-background-color;
 
-  height: 30vh;
+      .tent-card-payment-icon {
+
+        background-color: $tent-card-background-color !important;
+        border-color: $tent-card-background-color !important;
+
+        // filter: invert(100%);
+
+        .logo.icon--white {
+          fill: $tent-card-color !important;
+        }
+
+        /*.logo.icon--blue {
+          display: block;
+        }*/
+      }
+    }
+
+
+  }
+
+  height: $tent-card-height;
   width: 100%;
 
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
+  justify-content: flex-end;
 
   text-decoration: none;
-  color: $gray;
+  color: $tent-card-color;
 
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s ease-in-out;
 
-  &:hover {
-    .card-trip {
-      background-color: $blue;
-      color: white;
+  .tent-card-up-thumbnail {
+    flex-grow: 1;
+    background: none;
+  }
+
+  .tent-card-down-content {
+    transition: all 0.3s ease-in-out;
+
+    height: $tent-card-copy-height;
+    padding: $tent-card-content-padding;
+
+    background-color: rgba($tent-card-background-color, 0.6);
+
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 100%;
+
+    .tent-card-content-left {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+
+      max-width: 72%;
+
+      .tent-card-title,
+      .tent-card-description {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        transition: all 0.3s ease-in-out;
+      }
     }
 
-    box-shadow: 0 0 30px rgba(darken($blue, 20%), 0.4);
+    .tent-card-content-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
 
-    .payment-avatar {
-      background-color: white;
-      color: $blue;
-      width: 50px;
+      .tent-card-payment-icon {
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: calc(-1 * #{$tent-card-payment-icon-height} / 2 - #{$tent-card-content-padding});
+
+        width: $tent-card-payment-icon-height;
+        height: $tent-card-payment-icon-height;
+
+        background-color: $tent-card-hover-background-color;
+
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        // border: 3px solid $tent-card-hover-background-color;
+
+        filter: drop-shadow(0px 0px 4px #0E0E0E);
+
+        .logo {
+          // transition: all 0.3s ease-in-out;
+          width: $tent-card-payment-icon-height * 0.8;
+          height: $tent-card-payment-icon-height * 0.8;
+        }
+
+        .logo.icon--white {
+          display: block;
+          fill: $tent-card-hover-color;
+          /*color: $tent-card-hover-color;
+
+          .apple-pay-white {
+            // transition: all 0.3s ease-in-out;
+            fill: $tent-card-hover-color;
+            color: $tent-card-hover-color;
+          }*/
+        }
+
+        .logo.icon--blue {
+          display: none;
+          fill: $tent-card-color;
+
+          .apple-pay-blue {
+            // transition: all 0.3s ease-in-out;
+            fill: $tent-card-color;
+            color: $tent-card-color;
+          }
+        }
+      }
+    }
+
+    .tent-card-price {
+      position: relative;
+      left: -1rem;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin-bottom: 0;
+        transition: all 0.3s ease-in-out;
+      }
     }
   }
 }
 
-.cards-content {
-  margin-top: 50px;
+.icon--blue {
+  color: $tent-card-color;
+}
+
+.icon--white {
+  color: $tent-card-background-color;
 }

@@ -1,9 +1,26 @@
 .cards,
 .grid-content {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr);
   grid-gap: 16px;
-  max-width: 100%;
+  width: 100%;
+
+
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: $smartphone-width) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (min-width: 768px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  // big devices (tablets, 768px and up)
+  @media (min-width: 992px) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
 }
 
 .grid-content {
@@ -11,6 +28,11 @@
   padding: 0.6rem 1rem;
   box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.4);
 }
+
+/*
+
+Break points were blowing out the grid at certain sizes
+Reimplement with time
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
@@ -55,4 +77,4 @@
   .grid-content {
     grid-template-columns: 1fr 1fr 1fr;
   }
-}
+}*/
