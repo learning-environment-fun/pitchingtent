@@ -16,7 +16,7 @@ class Tent < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def self.wildlife_options
-    ["Bear", "Cactus", "Freddy", "Deer", "Fish", "Moose", "Raccoon", "Spider", "Squirrel", "Turkey"]
+    ["Bear", "Cactus", "Deer", "Fish", "Moose", "Raccoon", "Spider", "Squirrel", "Turkey", "Horse"]
   end
 
   include PgSearch
