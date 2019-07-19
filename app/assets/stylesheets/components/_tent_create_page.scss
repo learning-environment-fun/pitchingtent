@@ -14,6 +14,9 @@
 }
 
 .tent-wrapper {
+
+    min-height: 100vh - $footer-height;
+
     background-color: rgba(0, 0, 0, 0.8);
 
     @media screen and (max-width: 600px) {
@@ -57,5 +60,3 @@
 
     }
 }
-
-
