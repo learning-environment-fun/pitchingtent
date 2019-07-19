@@ -29,6 +29,13 @@
   box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.4);
 }
 
+
+.content-box {
+  background-color: rgba($light-gray, $index-content-background-opacity);
+  padding: 0.6rem 1rem;
+  box-shadow: 0 0 1.25rem rgba(0, 0, 0, 0.4);
+}
+
 /*
 
 Break points were blowing out the grid at certain sizes
