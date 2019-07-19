@@ -3,7 +3,7 @@ header {
     height: $header-height;
 
     flex-grow: 0;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     position: relative;
