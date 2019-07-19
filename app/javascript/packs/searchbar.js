@@ -101,6 +101,15 @@ const searchBarFocusDetectInit = () => {
 }
 
 const searchBarDropDownListenerInit = () => {
+
+  // z-index fix
+  /*const userMenu = document.getElementById('user-menu');
+  const header = document.getElementsByTagName('header')[0];
+
+  if (header !== null) {
+    userMenu.style.zIndex = header.style.zIndex - 1;
+  }*/
+
   const avatar = searchBar.querySelector('.avatar-circle');
   const arrow = searchBar.querySelector('#search-bar-dropdown-arrow');
 

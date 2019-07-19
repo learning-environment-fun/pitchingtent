@@ -3,7 +3,7 @@
 <div class="search-bar<%= class_string %>">
     <span id="search-bar-logo-and-drop-down">
         <%= link_to root_path do %>
-            <%= inline_svg "tepee.svg", class: 'logo-svg' %>
+        <%= inline_svg "tepee.svg", class: 'logo-svg' %>
         <% end %>
         <span id='search-bar-dropdown-arrow'>
             <i class="fas fa-chevron-down"></i>
@@ -26,16 +26,27 @@
 
 <% class_string = is_in_header ? 'header-present' : '' %>
 <div id="user-menu" class="<%= class_string %>">
-  <% if current_user %>
     <ul>
-        <li><i class="fas fa-user-circle"></i> <%= link_to 'View Profile', user_path %></li>
+        <% if current_user %>
+        <%= link_to user_path do %>
+        <li><i class="fas fa-user-circle"></i>View Profile</li>
+        <% end %>
 
-        <li><i class="fas fa-cog"></i> <%= link_to 'Edit Account', edit_user_registration_path %> </li>
+        <%= link_to edit_user_registration_path do %>
+        <li><i class="fas fa-cog"></i>Edit Account</li>
+        <% end %>
 
-        <li><i class="fas fa-sign-out-alt"></i> <%= link_to 'Log Out', destroy_user_session_path, method: :delete %></li>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+        <li><i class="fas fa-sign-out-alt"></i>Log Out</li>
+        <% end %>
+        <% else %>
+        <%= link_to new_user_registration_path do %>
+        <li><i class="fas fa-user-circle"></i>Create Account</li>
+        <% end %>
+
+        <%= link_to new_user_session_path do %>
+        <li><i class="fas fa-sign-out-alt"></i>Log In</li>
+        <% end %>
+        <% end %>
     </ul>
-    <% else %>
-      <li><i class="fas fa-user-circle"></i> <%= link_to 'Create Account', new_user_registration_path %></li>
-      <li><i class="fas fa-sign-out-alt"></i> <%= link_to 'Log In', new_user_session_path %></li>
-    <% end %>
 </div>
