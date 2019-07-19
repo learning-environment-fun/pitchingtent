@@ -183,8 +183,8 @@
         color: $searchbar-light-color;
     }
 
-    // can only get one-way background-color transition to work; 
-    // might be a glitch? 
+    // can only get one-way background-color transition to work;
+    // might be a glitch?
     // all other transitions work two-way
     transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
 
@@ -243,11 +243,12 @@
 
     z-index: $footer-high-z-index+2;
 
-    width: 30vw;
+    width: 17vw;
 
     padding: 0;
-    background-color: $searchbar-light-background-color;
-    color: $searchbar-light-color;
+    background-color: rgba(0, 0, 0, 0.8); //$searchbar-light-background-color
+    color: white; //$searchbar-light-color
+
 
 
     @media screen and (max-width: $smartphone-width) {
@@ -260,7 +261,7 @@
         list-style-type: none;
         list-style-position: unset;
         padding: 0;
-        margin: 0;
+        margin: 10px;
 
         li {
             >span {
@@ -268,27 +269,28 @@
                 padding-left: 30px;
             }
 
-            display: flex;
-            align-content: flex-end;
-            align-items: center;
-            padding-left: 50%;
-            padding-right: 0.7rem;
-            padding-top: 0.2rem;
-            padding-bottom: 0.2rem;
+            //my
+            padding: 15px;
+            //display: flex;
+            //align-content: flex-end;
+           // align-items: center;
+            //padding-left: 50%;
+            //padding-right: 0.7rem;
+           // padding-top: 0.2rem;
+            //padding-bottom: 0.2rem;
+            font-size: 1.0rem;
 
-            font-size: 1.5rem;
+            //border-bottom: 0.7px solid white;
 
-            border-bottom: 2px solid $searchbar-light-color;
-            color: $searchbar-light-color;
+            color: white;//$searchbar-light-color
+
             background-color: none;
+
             transition: background-color $searchbar-color-transition-time $searchbar-color-transition-ease-type;
 
             &:hover {
-                background-color: darken($searchbar-light-background-color, 30%);
+                //color: darken($searchbar-light-background-color, 30%);
             }
         }
     }
-
-
-
 }
