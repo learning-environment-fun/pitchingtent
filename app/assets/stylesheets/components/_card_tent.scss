@@ -17,15 +17,15 @@
         background-color: $tent-card-background-color !important;
         border-color: $tent-card-background-color !important;
 
-        filter: invert(100%);
+        // filter: invert(100%);
 
         .logo.icon--white {
-          display: none;
+          fill: $tent-card-color !important;
         }
 
-        .logo.icon--blue {
+        /*.logo.icon--blue {
           display: block;
-        }
+        }*/
       }
     }
 
@@ -97,7 +97,7 @@
         width: $tent-card-payment-icon-height;
         height: $tent-card-payment-icon-height;
 
-        background-color: $tent-card-background-color;
+        background-color: $tent-card-hover-background-color;
 
         overflow: hidden;
 
@@ -118,6 +118,7 @@
 
         .logo.icon--white {
           display: block;
+          fill: $tent-card-hover-color;
           /*color: $tent-card-hover-color;
 
           .apple-pay-white {
@@ -129,7 +130,7 @@
 
         .logo.icon--blue {
           display: none;
-          color: $tent-card-color;
+          fill: $tent-card-color;
 
           .apple-pay-blue {
             // transition: all 0.3s ease-in-out;
