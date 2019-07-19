@@ -1,5 +1,6 @@
 <%= render 'components/search_bar' %>
-<div id="content-wrapper">
+<div id="content-wrapper" class="background-intelligent-cover is-blurred is-fixed-to-viewport"
+    data-background-image="<%= image_path('background_leaves.jpg') %>">
     <!-- <div id="content-wrapper" class="background-intelligent-cover is-fixed-to-viewport" data-background-image="<%= cl_image_path(@tent.photo) %>"> -->
     <div class="content-shadow">
         <div id="content-container">
@@ -23,7 +24,7 @@
                                 </div>
                             </div> -->
                         </div>
-                        <div class="content-show">
+                        <div class="content-show content-box">
                             <div class="content-upper-show">
                                 <div id="title-cost-show">
                                     <h1>
@@ -113,7 +114,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="review-container">
+                    <div class="review-container content-box mt-4">
                         <div>
                           <br>
                           <br>

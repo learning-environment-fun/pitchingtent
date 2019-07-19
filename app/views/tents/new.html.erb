@@ -1,26 +1,27 @@
 <%= render 'components/search_bar' %>
-
-<div id="content-wrapper" class="content-create-tent">
+<div id="content-wrapper" class="background-intelligent-cover is-blurred is-fixed-to-viewport"
+    data-background-image="<%= image_path('background_lake_tent_edited.jpg') %>">
     <div class="content-shadow">
         <!--    <div class="content-create-tent">-->
-        <div class="tent-wrapper">
-            <div class="tent-form">
-                <h1>Rent your Tent!</h1>
-                <%= simple_form_for @tent do |f| %>
-                <%= f.input :title %>
-                <%= f.input :capacity %>
-                <%= f.input :description %>
-                <%= f.input :location %>
-                <%= f.input :price %>
-                <%= f.input :wildlife, collection: Tent.wildlife_options, input_html: { multiple: true } %>
-                <%= f.input :photo %>
-                <%= f.input :photo_cache, as: :hidden %>
-                <%= f.button :submit %>
-                <% end %>
+        <div id="content-container">
+            <div class="login">
+                <div class="login-form">
+                    <h1>Rent your Tent!</h1>
+                    <%= simple_form_for @tent do |f| %>
+                    <%= f.input :title %>
+                    <%= f.input :capacity %>
+                    <%= f.input :description %>
+                    <%= f.input :location %>
+                    <%= f.input :price %>
+                    <%= f.input :wildlife, collection: Tent.wildlife_options, input_html: { multiple: true } %>
+                    <%= f.input :photo %>
+                    <%= f.input :photo_cache, as: :hidden %>
+                    <%= f.button :submit %>
+                    <% end %>
+                </div>
             </div>
+            <!--    </div>-->
         </div>
-        <!--    </div>-->
     </div>
 </div>
-
 <%= render partial:'/components/footer', locals: { is_above: true } %>
