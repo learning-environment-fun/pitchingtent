@@ -44,7 +44,9 @@
 
 }
 
-.content-upper-show {}
+.content-upper-show {
+  min-height: 150px;
+}
 
 #title-cost-show {
     display: flex;
@@ -56,7 +58,9 @@
 
 }
 
-.content-low-show {}
+.content-low-show {
+
+}
 
 .book-show {
     display: flex;
@@ -69,7 +73,7 @@
 }
 
 .border-underline {
-  border-top: 3px solid black;
+  border-top: 3px solid gray;
 }
 
 .form-book {
@@ -92,18 +96,6 @@
 
 
 
-
-// .header_tent {
-
-//  padding-top: 10px;
-//   height: 400px;
-// }
-
-// .header_tent_content {
-//
-//   margin-left: 40px;
-//   padding-top: 20px;
-// }
 
 // .img_container {
 //   background-size: cover;

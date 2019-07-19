@@ -1,16 +1,16 @@
 <%= render 'components/search_bar' %>
 <div id="content-wrapper">
-<!-- <div id="content-wrapper" class="background-intelligent-cover is-fixed-to-viewport" data-background-image="<%= cl_image_path(@tent.photo) %>"> -->
+    <!-- <div id="content-wrapper" class="background-intelligent-cover is-fixed-to-viewport" data-background-image="<%= cl_image_path(@tent.photo) %>"> -->
     <div class="content-shadow">
         <div id="content-container">
-<!--             <img src="" alt="" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);"> -->
+            <!--             <img src="" alt="" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path(@tent.photo);%>);"> -->
             <%#= cl_image_tag(@tent.photo) %>
             <div class="background-container">
                 <div>
                     <div class="grid-container">
                         <div class="photo-show">
                             <!-- <div> -->
-                                <%= cl_image_tag(@tent.photo, width: 380, height:250, crop: :fit) %>
+                            <%= cl_image_tag(@tent.photo, width: 380, height:250, crop: :fill) %>
                             <!-- </div> -->
                             <!-- <div>
                                 <div>
@@ -31,7 +31,7 @@
                                     </h1>
                                     <h5>€
                                         <%= @tent.price %>
-                                        </h3>
+                                    </h3>
                                 </div>
                                 <div>
                                     <p>
@@ -42,7 +42,7 @@
                             <div class="content-mid-show">
                                 <div class="w3-row">
                                     <a href="javascript:void(0)" onclick="openCity(event, 'London');">
-                                        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-red">Details</div>
+                                        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding w3-border-blue">Details</div>
                                     </a>
                                     <a href="javascript:void(0)" onclick="openCity(event, 'Paris');">
                                         <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Wildlife</div>
@@ -77,13 +77,14 @@
                                     </p>
                                 </div>
                                 <div id="Tokyo" class="w3-container city" style="display:none">
-                                  <div id="reviews">
-                                  </div>
-                                  <%= simple_form_for([ @tent, @review ]) do |form| %>
-                                  <br>
+                                    <div id="reviews">
+                                    </div>
+                                    <%= simple_form_for([ @tent, @review ]) do |form| %>
+                                    <br>
                                     <%= form.input :content, as: :text, label: false, placeholder: "Write your review here for #{@tent.title}"  %>
-                                    <%= form.button :submit %>
-                                  <% end %>
+                                    <%= form.button :submit, class:"btn btn-primary"%>
+
+                                    <% end %>
                                 </div>
                                 <script>
                                     function openCity(evt, cityName) {
@@ -94,40 +95,45 @@
                                     }
                                     tablinks = document.getElementsByClassName("tablink");
                                     for (i = 0; i < x.length; i++) {
-                                        tablinks[i].className = tablinks[i].className.replace(" w3-border-red", "");
+                                        tablinks[i].className = tablinks[i].className.replace(" w3-border-blue", "");
                                     }
                                     document.getElementById(cityName).style.display = "block";
-                                    evt.currentTarget.firstElementChild.className += " w3-border-red";
+                                    evt.currentTarget.firstElementChild.className += " w3-border-blue";
                                 }
                                 </script>
                             </div>
                             <div class="content-low-show">
                                 <div class="book-show">
-                                  <form class="form-book">
-                                      <input type="text" name="start date" value="Start Date">
-                                      <input type="text" name="end date" value="End Date">
-                                  </form>
-                                  <%= link_to 'Book Now!', new_tent_path, class:"btn btn-primary"%>
+                                    <form class="form-book">
+                                        <input type="text" name="start date" value="Start Date">
+                                        <input type="text" name="end date" value="End Date">
+                                    </form>
+                                    <%= link_to 'Book Now!', new_tent_path, class:"btn btn-primary"%>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="review-container" class="border-underline">
-                      <h2>
-                        <%= pluralize @tent.reviews.size, "review" %>
-                      </h2>
-                      <% if @tent.reviews.blank? %>
-                        Be the first to leave a review for <%= @tent.title %>
-                      <% else %>
-                        <% @tent.reviews.each do |review| %>
-                          <p><%= review.content %></p>
-                        <% end %>
-                      <% end %>
-                      <p>We thoroughly enjoyed our stay! The tent was clean and comfortable, and the nearby activities were fun and affordable.</p>
-                      <p>Although we lost our youngest to a bear attack, we still had a great time, as did the children which survived! Yay!</p>
-                      <p>What a fantastic trip! The city truly does get to be too much at times, and a relaxing weekend escape does magic for my back.</p>
-                      <p>This group of weird developers sadly ruined my holiday.</p>
-                      <p>Reminds me of when I went camping with my fruncle Steve.</p>
+                    <div class="review-container">
+                        <div>
+                          <br>
+                          <br>
+                            <h2>
+                                <%= pluralize @tent.reviews.size, "Reviews" %>
+                            </h2>
+                        </div>
+                        <div class="border-underline">
+                          <br>
+                          <% if @tent.reviews.blank? %>
+                          Be the first to leave a review for
+                          <%= @tent.title %>
+                          <% else %>
+                          <% @tent.reviews.each do |review| %>
+                          <p>
+                              <%= review.content %>
+                          </p>
+                          <% end %>
+                          <% end %>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1,9 +1,9 @@
 require 'faker'
 
-p "Charles the Intern is clearing the Database...."
+p "Charles the mighty master is clearing the Database...."
 Tent.destroy_all
 
-p "Our God Felix is reseeding the Database"
+p "Our neophite Felix collecting seed for the Database"
 
 Tent.create(
 	title: "Lakeside Cabin",
@@ -170,4 +170,36 @@ Tent.create(
 	user_id: User.last.id
 	)
 
-p "Seeding has been completed."
+Review.create(
+  content: "We thoroughly enjoyed our stay! The tent was clean and comfortable, and the nearby activities were fun and affordable.",
+  tent_id: Tent.first.id,
+  user_id: User.first.id
+)
+
+Review.create(
+  content: "Although we lost our youngest to a bear attack, we still had a great time, as did the children which survived! Yay!",
+  tent_id: Tent.first.id,
+  user_id: User.first.id
+)
+
+Review.create(
+  content: "What a fantastic trip! The city truly does get to be too much at times, and a relaxing weekend escape does magic for my back.",
+  tent_id: Tent.first.id,
+  user_id: User.first.id
+)
+
+Review.create(
+  content: "This group of weird developers sadly ruined my holiday.",
+  tent_id: Tent.first.id,
+  user_id: User.first.id
+)
+
+Review.create(
+  content: "Reminds me of when I went camping with my fruncle Steve.",
+  tent_id: Tent.first.id,
+  user_id: User.first.id
+)
+p "The royal seed has been cleaned your highness you may now proceed!"
+
+
+
