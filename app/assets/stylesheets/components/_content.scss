@@ -17,6 +17,7 @@
     padding: $content-container-vertical-padding $content-container-horizontal-padding;
     flex-grow: 1;
     padding-bottom: 50px;
+    min-height: 100vh - $footer-height;
 
   }
 
