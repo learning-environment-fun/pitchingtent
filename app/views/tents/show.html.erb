@@ -48,7 +48,7 @@
                                         <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Wildlife</div>
                                     </a>
                                     <a href="javascript:void(0)" onclick="openCity(event, 'Tokyo');">
-                                        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Reviews</div>
+                                        <div class="w3-third tablink w3-bottombar w3-hover-light-grey w3-padding">Review</div>
                                     </a>
                                 </div>
                                 <div id="London" class="w3-container city" style="display:block">
@@ -77,11 +77,13 @@
                                     </p>
                                 </div>
                                 <div id="Tokyo" class="w3-container city" style="display:none">
-                                    <p>We thoroughly enjoyed our stay! The tent was clean and comfortable, and the nearby activities were fun and affordable.</p>
-                                    <p>Although we lost our youngest to a bear attack, we still had a great time, as did the children which survived! Yay!</p>
-                                    <p>What a fantastic trip! The city truly does get to be too much at times, and a relaxing weekend escape does magic for my back.</p>
-                                    <p>This group of weird developers sadly ruined my holiday.</p>
-                                    <p>Reminds me of when I went camping with my fruncle Steve.</p>
+                                  <div id="reviews">
+                                  </div>
+                                  <%= simple_form_for([ @tent, @review ]) do |form| %>
+                                  <br>
+                                    <%= form.input :content, as: :text, label: false, placeholder: "Write your review here for #{@tent.title}"  %>
+                                    <%= form.button :submit %>
+                                  <% end %>
                                 </div>
                                 <script>
                                     function openCity(evt, cityName) {
@@ -100,22 +102,36 @@
                                 </script>
                             </div>
                             <div class="content-low-show">
-                                <div class="start-end-absolute">
-                                    <div class="start-end-show">
-                                        <form class="form-book">
-                                            <input type="text" name="start date" value="Start Date">
-                                            <input type="text" name="end date" value="End Date">
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="book-show" class="border-underline">
-                                    <%= link_to 'Book Now!', new_tent_path, class:"btn btn-primary"%>
+                                <div class="book-show">
+                                  <form class="form-book">
+                                      <input type="text" name="start date" value="Start Date">
+                                      <input type="text" name="end date" value="End Date">
+                                  </form>
+                                  <%= link_to 'Book Now!', new_tent_path, class:"btn btn-primary"%>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="review-container" class="border-underline">
+                      <h2>
+                        <%= pluralize @tent.reviews.size, "review" %>
+                      </h2>
+                      <% if @tent.reviews.blank? %>
+                        Be the first to leave a review for <%= @tent.title %>
+                      <% else %>
+                        <% @tent.reviews.each do |review| %>
+                          <p><%= review.content %></p>
+                        <% end %>
+                      <% end %>
+                      <p>We thoroughly enjoyed our stay! The tent was clean and comfortable, and the nearby activities were fun and affordable.</p>
+                      <p>Although we lost our youngest to a bear attack, we still had a great time, as did the children which survived! Yay!</p>
+                      <p>What a fantastic trip! The city truly does get to be too much at times, and a relaxing weekend escape does magic for my back.</p>
+                      <p>This group of weird developers sadly ruined my holiday.</p>
+                      <p>Reminds me of when I went camping with my fruncle Steve.</p>
+                    </div>
                 </div>
             </div>
+            <%#= render 'reviews/form', tent: @tent, review: @review %>
         </div>
     </div>
 </div>

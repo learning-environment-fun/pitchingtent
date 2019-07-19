@@ -53,26 +53,10 @@
 }
 
 .content-mid-show {
-    // overflow: scroll;
+
 }
 
 .content-low-show {}
-
-.start-end-absolute {
-    position: absolute;
-    bottom: 50px;
-    right: 12px;
-}
-
-.start-end-show {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.start-end-show p {
-    padding-right: 20px;
-}
 
 .book-show {
     display: flex;
@@ -95,9 +79,7 @@
 
 }
 .form-book input {
-    margin: 20px;
-    padding: 5px;
-
+    margin-right: 40px;
 }
 
 
