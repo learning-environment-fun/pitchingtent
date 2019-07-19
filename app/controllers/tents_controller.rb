@@ -12,6 +12,7 @@ class TentsController < ApplicationController
 
   def show
     @tent = Tent.find(params[:id])
+    @review = Review.new
   end
 
   def new
@@ -43,7 +44,7 @@ class TentsController < ApplicationController
   end
 
   private
-  
+
   # Validation to allow name and nothing else into the form
   def tent_params
     params.require(:tent).permit(:title, :capacity, :description, :location, :price, :wildlife, :photo)
