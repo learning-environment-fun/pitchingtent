@@ -3,12 +3,36 @@
     <div class="content-shadow">
         <div id="content-container">
             <div>
-                <h2>Good afternoon
-                    <%= current_user.name %>
-                </h2>
-                <br>
-                <h3>Your Bio</h3>
-                <p>(<strong>Note</strong> - Other Users can view this!)</p>
+              <div class="user-card">
+
+                <div class="card-product">
+                    <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" />
+                    <div class="card-product-infos">
+                        <h3>Good afternoon
+                            <strong><%= current_user.name %></strong>
+                        </h3>
+                        <p>User since: <%= current_user.created_at.strftime("%F") %></p>
+                        <hr>
+                        <p><%= current_user.description %></p>
+                    </div>
+                </div>
+
+
+                <h2 style="color: white; padding-top: 30px;">Your Listings</h2>
+                <hr>
+                     <div class="cards mt-4">
+              <% @current_id = current_user.id %>
+                <% current_user.tents.each do |tent| %>
+                <%= render partial: 'components/tent_card', locals: { tent: tent } %>
+                <% end %>
+            </div>
+
+              </div>
+
+
+
+
+
             </div>
         </div>
     </div>
