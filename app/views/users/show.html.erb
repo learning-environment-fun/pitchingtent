@@ -1,7 +1,16 @@
-<div>
-	<h2>Good afternoon <%= current_user.name %></h2>
-	<br>
-	<h3>Your Bio</h3>
-	<p>(<strong>Note</strong> - Other Users can view this!)</p>
-</div>
+<%= render 'components/search_bar' %>
 
+<div id="content-wrapper" class="background-intelligent-cover is-blurred is-fixed-to-viewport"
+	data-background-image="<%= image_path 'background_autumn.jpg' %>">
+	<div class="content-shadow">
+		<div id="content-container">
+			<div>
+				<h2>Good afternoon <%= current_user.name %></h2>
+				<br>
+				<h3>Your Bio</h3>
+				<p>(<strong>Note</strong> - Other Users can view this!)</p>
+			</div>
+		</div>
+	</div>
+</div>
+<%= render partial:'/components/footer', locals: { is_above: true } %>
