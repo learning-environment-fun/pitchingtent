@@ -5,6 +5,7 @@
 @import "config/dimensions";
 @import "config/resources_urls";
 @import "config/custom_functions";
+@import "config/vars";
 
 // External libraries
 @import "bootstrap/scss/bootstrap";
@@ -34,4 +35,3 @@
 @import "components/fvlfn_show_page";
 @import "components/blurred_background";
 @import "components/icon_hr";
-
