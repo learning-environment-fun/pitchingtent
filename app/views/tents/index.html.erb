@@ -7,7 +7,8 @@
                 <div>
                     <h3>Book a Tent – Escape Now.</h3>
                     <br>
-                    <p>Utilize <strong>Pitch-a-Tent</strong> to blow off some steam, escaping city-life stress. Our service provides a plethora of options, ensuring everyone can find an experience they enjoy!</p>
+                    <p>Utilize <strong>Pitch-a-Tent</strong> to blow off some steam, escaping city-life stress. Our
+                        service provides a plethora of options, ensuring everyone can find an experience they enjoy!</p>
 
                 </div>
                 <div class="icon-list">
@@ -36,12 +37,10 @@
                 <i class="fas fa-crow"></i>
             </div>
 
-            <div class="cards-content mt-4">
-                <div class="cards">
-                    <% @tents.each do |tent| %>
-                        <%= render partial: 'components/tent_card', locals: { tent: tent } %>
-                    <% end %>
-                </div>
+            <div class="cards mt-4">
+                <% @tents.each do |tent| %>
+                <%= render partial: 'components/tent_card', locals: { tent: tent } %>
+                <% end %>
             </div>
         </div>
     </div>

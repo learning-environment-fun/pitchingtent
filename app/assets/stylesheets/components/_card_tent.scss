@@ -1,29 +1,239 @@
-.card-thumbnail {
+// starting fresh--reimplemented
+
+.tent-card {
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+    color: $tent-card-hover-color;
+    box-shadow: 0 0 35px rgba(darken($blue, 30%), 0.5);
+
+    .tent-card-down-content {
+      background-color: $tent-card-hover-background-color;
+
+      .tent-card-payment-icon {
+
+        background-color: $tent-card-background-color !important;
+        border-color: $tent-card-background-color !important;
+
+        filter: invert(100%);
+
+        .logo.icon--white {
+          display: none;
+        }
+
+        .logo.icon--blue {
+          display: block;
+        }
+      }
+    }
+
+
+  }
+
+  height: $tent-card-height;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  text-decoration: none;
+  color: $tent-card-color;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease-in-out;
+
+  .tent-card-up-thumbnail {
+    flex-grow: 1;
+    background: none;
+  }
+
+  .tent-card-down-content {
+    transition: all 0.3s ease-in-out;
+
+    height: $tent-card-copy-height;
+    padding: $tent-card-content-padding;
+
+    background-color: rgba($tent-card-background-color, 0.6);
+
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 100%;
+
+    .tent-card-content-left {
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: stretch;
+
+      max-width: 72%;
+
+      .tent-card-title,
+      .tent-card-description {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    .tent-card-content-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      position: relative;
+
+      .tent-card-payment-icon {
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        top: calc(-1 * #{$tent-card-payment-icon-height} / 2 - #{$tent-card-content-padding});
+
+        width: $tent-card-payment-icon-height;
+        height: $tent-card-payment-icon-height;
+
+        background-color: $tent-card-background-color;
+
+        overflow: hidden;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 50%;
+        // border: 3px solid $tent-card-hover-background-color;
+
+        filter: drop-shadow(0px 0px 4px #0E0E0E);
+
+        .logo {
+          // transition: all 0.3s ease-in-out;
+          width: $tent-card-payment-icon-height * 0.8;
+          height: $tent-card-payment-icon-height * 0.8;
+        }
+
+        .logo.icon--white {
+          display: block;
+          /*color: $tent-card-hover-color;
+
+          .apple-pay-white {
+            // transition: all 0.3s ease-in-out;
+            fill: $tent-card-hover-color;
+            color: $tent-card-hover-color;
+          }*/
+        }
+
+        .logo.icon--blue {
+          display: none;
+          color: $tent-card-color;
+
+          .apple-pay-blue {
+            // transition: all 0.3s ease-in-out;
+            fill: $tent-card-color;
+            color: $tent-card-color;
+          }
+        }
+      }
+    }
+
+    .tent-card-price {
+      position: relative;
+      left: -1rem;
+
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin-bottom: 0;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}
+
+.icon--blue {
+  color: $tent-card-color;
+}
+
+.icon--white {
+  color: $tent-card-background-color;
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+  &:hover {
+    .tent-card-text-copy {
+      background-color: $blue;
+      color: white;
+    }
+
+    box-shadow: 0 0 30px rgba(darken($blue, 20%), 0.4);
+
+    .payment-avatar {
+      background-color: white;
+      color: $blue;
+      width: 50px;
+    }
+
+  }
+}
+
+.tent-card-thumbnail {
   flex-grow: 1;
   width: 100%;
 }
 
-.card-trip {
+.tent-card-trip {
   // overflow: hidden;
   background: white;
   // box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease-in-out;
+  height: $tent-card-copy-height;
 }
 
-.card-trip h2 {
+.tent-card-trip-infos .inner {
+  overflow: hidden;
+}
+
+.tent-card-trip p,
+h2 {
+  max-width: 70%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tent-card-trip h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.tent-card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
 }
 
 
-.card-trip .card-trip-infos {
+.tent-card-trip .tent-card-trip-infos {
   padding: 16px;
   display: flex;
   justify-content: space-between;
@@ -31,7 +241,7 @@
   position: relative;
 }
 
-.card-trip-infos .card-trip-user {
+.tent-card-trip-infos .tent-card-trip-user {
   position: absolute;
   right: 16px;
   top: -20px;
@@ -52,38 +262,10 @@
 
 }
 
-.card-link-wrapper {
 
-  height: 30vh;
-  width: 100%;
 
-  display: flex;
-  flex-direction: column-reverse;
-
-  text-decoration: none;
-  color: $blue;
-
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-
-  transition: box-shadow 0.3s ease-in-out;
-
-  &:hover {
-    .card-trip {
-      background-color: $blue;
-      color: white;
-    }
-
-    box-shadow: 0 0 30px rgba(darken($blue, 20%), 0.4);
-
-    .payment-avatar {
-      background-color: white;
-      color: $blue;
-      width: 50px;
-    }
-
-  }
-}
-
-.cards-content {
+.tent-cards-content {
   margin-top: 50px;
 }
+
+*/
