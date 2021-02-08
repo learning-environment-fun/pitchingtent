@@ -9,7 +9,7 @@ gem 'inline_svg'
 
 # Cloudinary + Carrierwave Gem for team (fcjn)
 gem 'cloudinary', '~> 1.9.1'
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 
 # Faker for the Seed (fcjn)
 gem 'faker'
